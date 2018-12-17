@@ -88,5 +88,123 @@
         </li>
     </ul>
 
+    <h2>Dedução natural</h2>
+
+    <p>Considere o seguinte argumento:</p>
+    <ol>
+        <li>
+            Se o trem chegar tarde e não existirem taxis na estação,
+            então Carlos está atrasado para a reunião.    
+        </li>
+        <li>
+            Carlos não está atrasado para a reunião.
+        </li>
+        <li>
+            O trem chegou tarde.
+        </li>
+    </ol>
+    <p>
+        Dela conclui-se que havia taxis na estação. Podemos modelar a 
+        situação da seguinte forma:
+    </p>
+    <p>
+        `P := ` "O trem chegar tarde"
+    </p>
+    <p>
+        `Q := ` "Existem taxis na estação"
+    </p>
+    <p>
+        `R := ` "Carlos está atrasado para reunião"
+    </p>
+    <ol>
+        <li>
+            `P ^^ not Q => R`
+        </li>
+        <li>
+            `not R`
+        </li>
+        <li>
+            `P`
+        </li>
+        <li>
+            `Q`
+        </li>
+    </ol>
+    <p>
+        Vamos ter um conjunto de regras de prova que permitirão
+        inferir derivar, concluir fórmulas a partir de outras fórmulas.
+        Aplicando estas regras sucessivamente, podemos inferir uma
+        conclusão a partir de um conjunto de premissas, que são
+        proposições inciais que servem de base oara uma argumentação
+        ou para um raciocínio.
+    </p>
+    
+    <h3>Notação</h3>
+    <p>
+        Suponha que tenhamos um conjunto `\{ phi_i \}_(i=1)^(n)` de proposições
+        (as nossas premissas) e uma fórmula `psi` que será a nossa conclusão
+        (ou <em>sequente</em>).
+    </p> 
+    <p class="math">
+        `\{ phi_i \}_(i=1)^(n) |-- psi`
+    </p>
+    <p>
+        Suas premissas provam a conclusão. Um sequente é válido se existe uma
+        prova para ele.
+    </p>
+
+    <h3>Regras</h3>
+    <h4>Regras para conjunção</h4>
+    <ul>
+        <li>
+            <p>
+                Introdução: sejam `phi, psi` premissas. Então `phi ^^ psi` é
+                conclusão. Em notação de árvore:
+            </p>
+            <p>
+                `(phi \ psi)/(phi ^^ psi)`
+            </p>
+        </li>
+        <li>
+            <p>
+                Eliminação:    
+            </p>
+            <p>
+                `(phi ^^ psi)/(phi)`
+            </p>
+            <p>
+                `(phi ^^ psi)/(psi)`
+            </p>
+        </li>
+    </ul>
+
+    <!-- Exemplo -->
+    <p>
+        Exemplo: prove que `P ^^ Q, R |-- Q ^^ R`
+    </p>
+    <div class="math">
+        <p>
+            `((P ^^ Q)/(Q) \  R )/(Q ^^ R)`
+        </p>
+        <p>
+            $$ 
+                \cfrac
+                    {\cfrac
+                        {P \wedge Q}
+                        {Q}
+                        \ R
+                    }
+                    {Q \wedge R} 
+                     
+            $$
+        </p>
+    </div>
+
+    <p>
+        Exercício: `(P ^^ Q) ^^ R, S ^^ T |-- Q ^^ S`
+    </p>
+
+    <h4>Regras para negação</h4>
+    <!-- TODO continuar da página 2 -->
 </body>
 </html>

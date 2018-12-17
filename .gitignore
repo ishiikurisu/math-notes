@@ -1,3 +1,7 @@
+###############
+# LATEX STUFF #
+###############
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
@@ -257,3 +261,9 @@ TSWLatexianTemp*
 
 # standalone packages
 *.sta
+
+###############
+# XHTML STUFF #
+###############
+
+*.min.js

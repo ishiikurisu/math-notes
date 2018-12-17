@@ -1,0 +1,5 @@
+---
+execute:
+  local: true
+  commands:
+  - pandoc --from html --to latex @file

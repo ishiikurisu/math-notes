@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Lógica Matemática &amp; Computacional</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body>
+    <h1>Introdução</h1>
+
+    <h2>Paradoxo de Russel</h2>
+    <p>
+        Considere o conjunto de todos os conjuntos que
+        não são membros de si mesmos:
+    </p>
+    <p class="math">
+        ` Q := \{ P | P !in Q \} `
+        ` :. A in Q => A !in Q `
+    </p>
+
+    <h1>Lógica Proposicional</h1>
+
+    <p>
+        O objetivo da lógica e da Matemática é modelar situações ou 
+        problemas de forma que seja possível raciocinar sobre eles 
+        formalmente. A fim de fazer argumentos formais, vamos 
+        desenvolver uma lógica simbólica a partir da qual podemos
+        expressar sentenças declarativas (ou proposições) e mostrar 
+        suas estruturas lógicas. Para isso, vamos definir a linguagem 
+        da lógica.
+    </p>
+
+    <h2>Alfabeto de Lógica</h2>
+    <p>O alfabeto da lógica é constituído por:</p>
+    <ul>
+        <li>Símbolos de pontuação: <em>(),;.</em></li>
+        <li>Símbolos proposicionais: letras romanas e gregas</li>
+        <li>Conectivos proposicionais: `^^ vv => <=> not`</li>
+    </ul>
+
+    <p>
+        As fórmulas da lógica proposicional são constituídas
+        indutivamente a partir dos símbolos do alfabeto
+        conforme as regras a seguir:
+    </p>
+    <ul>
+        <li>
+            Se `H` é uma fórmula, então `not H` é
+            fórmula.
+        </li>
+        <li>
+            Se `H, G` são fórmulas, então `H ^^ G`; 
+            `H vv G`; `H => G`; e `H <=> G` também são
+            fórmulas.
+        </li>
+        <li>Hipótese `=>` Conclusão</li>
+    </ul>
+
+    <p>Os conectivos lógicos satisfazem a seguinte ordem:</p>
+    <ol>
+        <li>`not`</li>
+        <li>`^^ > vv`</li>
+        <li>`=> > <=>`</li>
+    </ol>
+
+    <p>Convenciona-se que a implicação é associativa à direita.</p>
+    <p>Seja `H` uma fórmula da lógica proposicional (LP). Então:</p>
+    <ul>
+        <li>
+            `H` é uma subfórmula de `H` (`H in suf(H)`)
+        </li>
+        <li>
+            Se `H` é uma fórmula do tipo `not G`,
+            então `G in suf(H)`
+        </li>
+        <li>
+            Se `H` é uma fórmula do tipo 
+            `P ^^ Q`; `P vv Q`; `P => Q`; ou `P <=> Q`,
+            então `P, Q in suf(H)`
+        </li>
+        <li>
+            `G in suf(H) => suf(G) sube suf(H)`
+        </li>
+    </ul>
+
+</body>
+</html>

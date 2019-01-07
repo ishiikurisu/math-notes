@@ -27,12 +27,12 @@
     <h1>Lógica Proposicional</h1>
 
     <p>
-        O objetivo da lógica e da Matemática é modelar situações ou 
-        problemas de forma que seja possível raciocinar sobre eles 
-        formalmente. A fim de fazer argumentos formais, vamos 
+        O objetivo da lógica e da Matemática é modelar situações ou
+        problemas de forma que seja possível raciocinar sobre eles
+        formalmente. A fim de fazer argumentos formais, vamos
         desenvolver uma lógica simbólica a partir da qual podemos
-        expressar sentenças declarativas (ou proposições) e mostrar 
-        suas estruturas lógicas. Para isso, vamos definir a linguagem 
+        expressar sentenças declarativas (ou proposições) e mostrar
+        suas estruturas lógicas. Para isso, vamos definir a linguagem
         da lógica.
     </p>
 
@@ -55,7 +55,7 @@
             fórmula.
         </li>
         <li>
-            Se `H, G` são fórmulas, então `H ^^ G`; 
+            Se `H, G` são fórmulas, então `H ^^ G`;
             `H vv G`; `H => G`; e `H <=> G` também são
             fórmulas.
         </li>
@@ -80,7 +80,7 @@
             então `G in suf(H)`
         </li>
         <li>
-            Se `H` é uma fórmula do tipo 
+            Se `H` é uma fórmula do tipo
             `P ^^ Q`; `P vv Q`; `P => Q`; ou `P <=> Q`,
             então `P, Q in suf(H)`
         </li>
@@ -95,7 +95,7 @@
     <ol>
         <li>
             Se o trem chegar tarde e não existirem taxis na estação,
-            então Carlos está atrasado para a reunião.    
+            então Carlos está atrasado para a reunião.
         </li>
         <li>
             Carlos não está atrasado para a reunião.
@@ -105,7 +105,7 @@
         </li>
     </ol>
     <p>
-        Dela conclui-se que havia taxis na estação. Podemos modelar a 
+        Dela conclui-se que havia taxis na estação. Podemos modelar a
         situação da seguinte forma:
     </p>
     <p>
@@ -140,13 +140,13 @@
         proposições inciais que servem de base oara uma argumentação
         ou para um raciocínio.
     </p>
-    
+
     <h3>Notação</h3>
     <p>
         Suponha que tenhamos um conjunto `\{ phi_i \}_(i=1)^(n)` de proposições
         (as nossas premissas) e uma fórmula `psi` que será a nossa conclusão
         (ou <em>sequente</em>).
-    </p> 
+    </p>
     <p class="math">
         `\{ phi_i \}_(i=1)^(n) |-- psi`
     </p>
@@ -169,7 +169,7 @@
         </li>
         <li>
             <p>
-                Eliminação:    
+                Eliminação:
             </p>
             <p  class="math">
                 `(phi ^^ psi)/(phi)`
@@ -185,15 +185,15 @@
         Exemplo: prove que `P ^^ Q, R |-- Q ^^ R`
     </p>
     <p  class="math">
-        $$ 
+        $$
             \cfrac
                 {\cfrac
                     {P \wedge Q}
                     {Q}
                     \ R
                 }
-                {Q \wedge R} 
-                 
+                {Q \wedge R}
+
         $$
     </p>
 
@@ -278,8 +278,8 @@
             <p>
                 `
                     (
-                        phi vv psi \ \ 
-                        {: ([phi]^u), (vdots), (x) :} \ \ 
+                        phi vv psi \ \
+                        {: ([phi]^u), (vdots), (x) :} \ \
                         {: ([psi]^v), (vdots), (x) :}
                     )
                     /
@@ -287,7 +287,7 @@
                 `
             </p>
         </li>
-    </ul>    
+    </ul>
 
     <!-- Página 3 -->
     <p>
@@ -348,11 +348,11 @@
             `P => Q, P => not Q |-- not P`
         </li>
         <li>
-            `P => (Q => R), P, not R |-- not Q`            
+            `P => (Q => R), P, not R |-- not Q`
         </li>
     </ul>
 
-    <h4>Propridades da inclusão</h4>
+    <h4>Propridades da implicação</h4>
     <p>
         A regra "Inclusão da Implicação" pode ser aplicada sem descarregar nenhuma
         hipótese: quando se sabe que `psi` é verdadeiro, `phi => psi AA phi` e
@@ -377,6 +377,99 @@
         Exemplo: `|-- phi => ((phi vv psi) ^^ (phi vv lambda))` é um descarregamento completo.
     </p>
 
-    <!-- Continuar da página 4 -->
+    <p>
+        A negação de uma fórmula `phi`, dada por `not phi` pode ser representada
+        por `not phi := phi => _|_`.
+    </p>
+
+    <h4>Lógicas Intuicionista e Clássica</h4>
+    <p>
+        A lógica intuicionista (LI) é composta das regras
+    </p>
+    <ul>
+        <li>Inclusão da conjunção</li>
+        <li>Eliminação da conjunção</li>
+        <li>Inclusão da disjunção</li>
+        <li>Eliminação da disjunção</li>
+        <li>Inclusão da implicação</li>
+        <li>Eliminação da implicação</li>
+        <li>Inclusão da negação</li>
+        <li>Eliminação da negação</li>
+        <li>Eliminação da contradição</li>
+    </ul>
+    <p>
+        Ela é base da matemática construtiva, que não admite a lei do meio
+        excluído (`psi vv not psi`). Em LI, esta lei vale se, e somente se,
+        (see) há uma prova para `psi` ou `not psi`, enquanto que, na lógica clássica (LC), `psi vv not psi`  é um axioma. Portanto, `LI sube LC`.
+    </p>
+    <p>
+        Para alcançarmos a lógica proposional clássica, adicionaremos uma das
+        seguintes regras:
+    </p>
+    <ul>
+        <li>Dupla negação</li>
+        <li>Lei do meio excluído</li>
+        <li>Prova por contradição</li>
+    </ul>
+    <p>
+        Exercícios:
+    </p>
+    <ul>
+        <li>
+            Prove que `not not e, LI` são suficientes para provar `LME,PPC`.
+        </li>
+        <li>
+            Prove `not not e, LME` por `PPC,LI`.
+        </li>
+    </ul>
+
+    <h4>Propriedades diversas</h4>
+    <p>
+        Podemos transformar uma prova de
+    </p>
+    <p class="math">
+        `phi_1, phi_2, ..., phi_n |-- psi`
+    </p>
+    <p>
+        em uma prova de
+    </p>
+    <p class="math">
+        `|-- phi_1 => (phi_2 => (... => (phi_n => psi)))`
+    </p>
+    <br>
+    <p>
+        Em qualquer estágio de prova, é permitido fazer uma suposição temporária
+        desde que ela seja descarregada.
+    </p>
+    <p>
+        Premissas podem ser utilizadas repetidamente (quantas vezes forem
+        necessárias).
+    </p>
+    <p>
+        Sejam `phi,psi` fórmulas da LP. Dizemos que elas são equivalentes se
+        os sequentes `phi |-- psi` e `psi |-- phi` são válidos. Denota-se por
+        \( \phi \dashv \vdash \psi \).
+    </p>
+    <p>
+        Exercícios:
+    </p>
+    <ul>
+        <li>
+            \( \neg (p \wedge q) \dashv \vdash \neg p \vee \neg q \)
+        </li>
+        <li>
+            \( p \to q \dashv \vdash \neg q \to \neg p \)
+        </li>
+        <li>
+            \( \neg (p \vee q) \dashv \vdash \neg p \wedge \neg q \)
+        </li>
+        <li>
+            \( p \to q \dashv \vdash \neg p \vee q \)
+        </li>
+        <li>
+            \( (p \wedge q) \to r \dashv \vdash p \to (q \to r) \)
+        </li>
+    </ul>
+    <!-- Continuar da página 5 -->
 </body>
 </html>

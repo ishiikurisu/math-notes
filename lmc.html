@@ -185,7 +185,7 @@
         Exemplo: prove que `P ^^ Q, R |-- Q ^^ R`
     </p>
     <p  class="math">
-        $$
+        \(
             \cfrac
                 {\cfrac
                     {P \wedge Q}
@@ -194,7 +194,7 @@
                 }
                 {Q \wedge R}
 
-        $$
+        \)
     </p>
 
     <p>
@@ -470,6 +470,167 @@
             \( (p \wedge q) \to r \dashv \vdash p \to (q \to r) \)
         </li>
     </ul>
-    <!-- Continuar da página 5 -->
+
+    <h1>Semântica da Lógica Proposicional</h1>
+    <p>
+        A interpretação ou a semântica dis elementos sintáticos da linguagem
+        da lógica proposicional é determinada por uma função 
+        `fr I` denominada "interpretação", que associa a cada fórmula da 
+        LPum valor verdadeiro (`TT`) ou falso (`_|_`)
+    </p>
+    <p>
+        `fr(I): LP -> \{ TT,_|_ \}`
+    </p>
+    <p>
+        `varphi |-> fr(I)(varphi) = TT,_|_`
+    </p>
+    <p>
+        onde o domínio LP é o conjunto de todas as fórmulas da lógica
+        prosicional.
+    </p>
+    <p>
+        As regras da interpretação semântica são dadas pelas
+        <em>tabela-verdade</em>.
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>`P`</th>
+                <th>`Q`</th>
+                <th>`P ^^ Q`</th>
+                <th>`P vv Q`</th>
+                <th>`P => Q`</th>
+                <th>`P <=> Q`</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>`TT`</td>
+                <td>`TT`</td>
+                <td>`TT`</td>
+                <td>`TT`</td>
+                <td>`TT`</td>
+                <td>`TT`</td>
+            </tr>
+            <tr>
+                <td>`TT`</td>
+                <td>`_|_`</td>
+                <td>`_|_`</td>
+                <td>`TT`</td>
+                <td>`_|_`</td>
+                <td>`_|_`</td>
+            </tr>
+            <tr>
+                <td>`_|_`</td>
+                <td>`TT`</td>
+                <td>`_|_`</td>
+                <td>`TT`</td>
+                <td>`TT`</td>
+                <td>`_|_`</td>
+            </tr>
+            <tr>
+                <td>`_|_`</td>
+                <td>`_|_`</td>
+                <td>`_|_`</td>
+                <td>`_|_`</td>
+                <td>`TT`</td>
+                <td>`TT`</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Propriedades Semânticas</h3>
+    <p>
+        Sejam `H,G, \{ H_i \}_(i=1)^(n)` fórmulas da LP. As propriedades
+        semânticas são definidas por:
+    </p>
+    <ul>
+        <li>
+            `H` é dita <em>tautologia</em> se `fr(I)(H) = TT AA fr(I)`
+        </li>
+        <li>
+            `H` é satisfatível see `EE fr I : fr(I)(H) = TT`
+        </li>
+        <li>
+            `H` é contingente see existem duas interpretações `fr(I)_1`, `fr(I)_2`
+            tais que `fr(I)_1(H) = TT` e `fr(I)_2(H) = _|_`.
+        </li>
+        <li>
+            <p>
+                `H` implica semanticamente `G` (ou `G` é consequência lógica de 
+                `H`) see `fr(I)(H) = TT => fr(I)(G) = TT AA fr(I)`.
+            </p>
+            <p>
+                Denota-se `H |== G`.
+            </p>
+        </li>
+        <li>
+           `H` equivale semanticamente a `G` see `fr(I)(H) = fr(I)(G) AA fr(I)` 
+        </li>
+        <li>
+            Dada uma interpretação `fr(I)`, se `fr(I)(H) = TT`, então diz-se que
+            `fr(I)(H)` satisfaz `H`.
+        </li>
+        <li>
+            `H` é contraditório see `fr(I)(H) = _|_ AA fr(I)`
+        </li>
+    </ul>
+
+    <h2>
+        Semântica da Implicação
+    </h2>
+    <p><em>
+        NÃO NECESSARIAMENTE UMA IMPLICAÇÃO POSSUI UMA RELAÇÃO DE CAUSA E EFEITO!
+    </em></p>
+    <p>
+        Na lógica, a fórmula `H => G` representa uma implicação
+        material, em que não há necessariamente uma conexão causal
+        entre `H` e `G`. O objetivo é dizer que, quando `H` é verdade e
+        `fr(I)(H) = TT`, então `G` é verdade, i.e. `fr(I)(G) = TT`. Quando
+        falamos da interpretação de `P => Q`, tratamos da fórmula como
+        um todo.
+    </p>
+    <p>
+        Se `fr(I)(P) = _|_`, então `fr(I)(P => Q) != TT AA Q`. Informalmente,
+        justifica-se que, a partir de uma afirmação falsa, pode-se concluir
+        qualquer tipo de declaração.
+    </p>
+    <h3>
+        Exemplos
+    </h3>
+    <h4>
+        Exemplo de Bertrand Russel
+    </h4>
+    <blockquote>
+        Se `2+2=5`, então minha namorada é o Papa.
+    </blockquote>
+    <ol>
+        <li>
+            Suponha que `2+2=5`.
+        </li>
+        <li>
+            É fácil que, se este for o caso, então `2=1`.
+        </li>
+        <li>
+            Minha namorada e o Papa são 2 indivíduos. Como `2=1`,
+            então minha namorada e o Papa são o mesmo indivíduo.
+        </li>
+    </ol>
+    <h4>
+        Exemplo da Álgebra
+    </h4>
+    <p>
+        `P := \{ x in RR | x < 10 \}`
+    </p>
+    <p>
+        `Q := \{ x in RR | x^2 < 100 \}`
+    </p>
+    <p>
+        ` x = 5 :. fr(I)(P) = TT ; fr(I)(Q) = TT :. fr(I)(P => Q) = TT `
+    </p>
+    <p>
+        ` x = -20 :. fr(I)(P) = TT ; fr(I)(Q) = _|_ :. fr(I)(P => Q) = _|_ `
+    </p>
+    <!-- Continuar da página 6 -->
 </body>
 </html>

@@ -631,6 +631,112 @@
     <p>
         ` x = -20 :. fr(I)(P) = TT ; fr(I)(Q) = _|_ :. fr(I)(P => Q) = _|_ `
     </p>
-    <!-- Continuar da página 6 -->
+
+    <h3>Causalidade</h3>
+    <p>
+        Conforme a tabela-verdade da implicação `P => Q`, se `fr(I)(Q) = TT`,
+        então `fr(I)(P => Q) = TT AA P`. Logo, `P` e `Q` são independentes.
+    </p>
+    <ul>
+        <li>
+            Prove que `P vv not P` é uma tautologia.
+        </li>
+    </ul>
+
+    <p>
+        O conjunto `beta = \{ H_n \}_(n=1)^(oo)` é satisfatível see 
+        `EE fr(I) | \{ fr(I)(H_n) \}_(n=1)^(oo) -= TT`. Nesse caso, dizemos que
+        `fr(I)` satisfaz `beta`. Denota-se `fr(I)(beta) = TT`.
+    </p>
+    <p>
+        Seja `S = \{\}`. Convenciona-se que `fr(I)(\{\}) = TT AA fr(I)`.
+    </p>
+    <p>
+        O conjunto `beta = \{ H_n \}_(n=1)^(oo)` implica semanticamente uma
+        fórmula `H` quando existe uma interpretação `fr(I)` tal que, se 
+        `fr(I)(beta) = TT`, então `fr(I)(H) = TT`. Nesse caso, `H` é 
+        consequeência semântica de `beta`. Denota-se `B |== H`. No caso em que
+        `beta` não implica semanticamente `H`, temos \( \beta \nvDash H \)
+    </p>
+    <h4>
+        Exercícios
+    </h4>
+    <ul>
+        <li>
+            <p>
+                Considere as seguintes fórmulas:
+            </p>
+            <p>
+                `H_1 := (P_1 ^^ P_2 ^^ P_3 ^^ P_4) => Q` 
+            </p>
+            <p>
+                `H_2 := (P_1 ^^ P_2 ^^ P_3 ^^ Q) => Q` 
+            </p>
+            <p>
+                `H_3 := (P vv not P) => (Q ^^ not Q)` 
+            </p>
+            <p>
+                Qual dessas fórmulas é uma tautologia? Qual é satisfatível? 
+                Qual é contraditória?
+            </p>
+        </li>
+        <li>
+            Mostre que `beta := \{ P, not P, Q \}` é insatisfatível.
+        </li>
+        <li>
+            Mostre que 
+            `beta := \{ P => Q, Q => R, R => S, S => P, not (S => Q) \}`
+            é satisfatível.
+        </li>
+    </ul>
+
+    <h2>Contradição</h2>
+    <p>
+        A fórmula `P ^^ not P` está relacionada com o princípio da 
+        não-contradição da lógica clássica (LC): dada uma proposição e a sua
+        negação, pelo menos uma delas é falsa.
+    </p>
+    <ul>
+        <li>
+            As fórmulas `H = P ^^ Q` e `G = P` são tais que `H |== G`?
+        </li>
+    </ul>
+
+    <h2>Relações entre proposições semânticas</h2>
+    <h3>Tautologia e contradição</h3>
+    <p>
+        `H` é uma tautologia see `not H` é contraditória.
+    </p>
+    <p>
+        `not H` não é satisfatível see `not H` é contraditória.
+    </p>
+    <h3>Tautologia e satisfatibilidade</h3>
+    <p>
+        Dada uma fórmula `H`, se `H` é tautologia, então `H` é satisfatível.
+    </p>
+    <h3>Implicação semântica e implicação sintática</h3>
+    <p>
+        `H |== G <=> fr(I)(H => G) AA fr(I)`.
+    </p>
+    <h3>Equivalência semântica e "se, e somente se"</h3>
+    <p>
+        Dadas as fórmulas `H, G`, `H` equivale semanticamente `G` see `H <=> G` é tautologia.
+    </p>
+    <h3>Equivalência e implicações semânticas</h3>
+    <p>
+        Dadas as fórmulas `H` e `G`, \( H = \parallel = G \) 
+        `<=> (H |== G ^^ G |== H)`.
+    </p>
+    <h3>Transitividade de \(= \parallel = \)</h3>
+    <p>
+        Dadas as fórmulas `E`, `G` e `H`, se \(E = \parallel = G\) e \(G = \parallel = H\),
+        então \( E = \parallel = H \).
+    </p>
+    <h3>Satisfatibilidade</h3>
+    <p>
+        Seja `\{ H_i \}_(i=1)^(n)` um conjunto de fórmulas. `\{ H_i \}_(i=1)^(n)`
+        é satisfatível see `^^^_(i=1)^(n) H_i` é satisfatível.
+    </p>
+    <!-- Continuar da página 7 -->
 </body>
 </html>

@@ -40,22 +40,22 @@
 <p>Números irracionais possuem diversas caracteristícas e a mais relevante agora é que eles não podem ser representados por frações de números inteiros. Desta forma, sua representação em uma base numérica é sempre infinita (ou seja, precisaríamos de memória infinita para representá-los). Isto é um problema para o CN, pois operações numéricas com estes números sempre trarão um erro associado.</p>
 <p>Curiosidade: raízes pares de números primos sempre são números irracionais.</p>
 <ul>
-<li>[ ] Encontre os seguintes somatórios em uma calculadora e em um computador: ˋS = sum_(i=1)ˆ(30000) x_iˋ onde ˋx_i = 0,5ˋ e ˋx_i = 0,11ˋ.</li>
+<li>[ ] Encontre os seguintes somatórios em uma calculadora e em um computador: `S = sum_(i=1)^(30000) x_i` onde `x_i = 0,5` e `x_i = 0,11`.</li>
 </ul>
 <p>Provavelmente, os resultados destas somas serão diferentes, já que as calculadoras e os computadores utilizam representações numéricas diferentes.</p>
 <h2 id="representa-o-num-rica">Representação numérica</h2>
-<p>Uma máquina computacional representa um número real no sistema de aritmética de ponto flutuante (APF), no qual um número ˋxˋ tem a seguinte estrutura:</p>
-<p>ˋx = +- (0,d_1 d_2 d_3 d_4 ... d_t) * b ˆ eˋ</p>
-<p>onde ˋ{ d<em>i }</em>(i=1)ˆ(t)ˋ é a chamada mantissa; ˋbˋ, a base; e ˋeˋ, o expoente. ˋd_1 != 0 AA xˋ. ˋe in (m, M)ˋ, chamados de limitantes inferior ˋmˋ e superior ˋMˋ. </p>
-<p>Para representar um número em ponto flutuante na base ˋbˋ com ˋtˋ dígitos (chamados <em>significativos</em>) e com limites dos expoentes ˋmˋ e ˋMˋ, usa-se a notação ˋF(b, t,m,M)ˋ. Portanto, um número em APF ˋF(b, t,m,M)ˋ será representado por </p>
-<p>ˋ+- 0,d_1 d_2 d_3 d_4 ... d_t  * b ˆ eˋ</p>
-<p>onde ˋd_1 != 0ˋ e ˋ-m &lt;= e &lt;= Mˋ</p>
+<p>Uma máquina computacional representa um número real no sistema de aritmética de ponto flutuante (APF), no qual um número `x` tem a seguinte estrutura:</p>
+<p>`x = +- (0,d_1 d_2 d_3 d_4 ... d_t) * b ^ e`</p>
+<p>onde `{ d<em>i }</em>(i=1)^(t)` é a chamada mantissa; `b`, a base; e `e`, o expoente. `d_1 != 0 AA x`. `e in (m, M)`, chamados de limitantes inferior `m` e superior `M`. </p>
+<p>Para representar um número em ponto flutuante na base `b` com `t` dígitos (chamados <em>significativos</em>) e com limites dos expoentes `m` e `M`, usa-se a notação `F(b, t,m,M)`. Portanto, um número em APF `F(b, t,m,M)` será representado por </p>
+<p>`+- 0,d_1 d_2 d_3 d_4 ... d_t  * b ^ e`</p>
+<p>onde `d_1 != 0` e `-m &lt;= e &lt;= M`</p>
 <ul>
-<li>Represente em APF ˋ(235,89)_10ˋ. Resposta: ˋ0,23589 * 10ˆ3ˋ</li>
-<li>Represente em APF ˋ(0,000875)_10ˋ. Resposta: ˋ0,875 * 10ˆ(-3)ˋ</li>
-<li>Represente em APF e submeta aos arredondamento e truncamento ˋ235,89ˋ, considerando ˋt =3ˋ e ˋb = 10ˋ. Resposta: ˋ0,236 <em> 10ˆ3ˋ com arredondamento, ˋ0,235 </em> 10ˆ3ˋ com truncamento.</li>
-<li>Represente em APF e submeta aos arredondamento e truncamento ˋ12,76ˋ, considerando ˋt =3ˋ e ˋb = 10ˋ. Resposta: ˋ0,128 <em> 10ˆ2ˋ com arredondamento, ˋ0,127 </em> 10ˆ3ˋ com truncamento.</li>
-<li>Considere ˋx_1 = 0,35; x_2 = -5,172; x_3 = 0,0123ˋ. Represente estes números no sistema ˋF(10,3,2,2)ˋ. Utilize truncamento se necessário. Respostas: ˋx_1 = 0,350 <em> 10ˆ0; x_2 = 0,53913 </em> 10^4; x_3 = 0,3 * 10^(-3)`. Note que os dois últimos números não são representáveis no sistema dado.</li>
+<li>Represente em APF `(235,89)_10`. Resposta: `0,23589 * 10^3`</li>
+<li>Represente em APF `(0,000875)_10`. Resposta: `0,875 * 10^(-3)`</li>
+<li>Represente em APF e submeta aos arredondamento e truncamento `235,89`, considerando `t =3` e `b = 10`. Resposta: `0,236 <em> 10^3` com arredondamento, `0,235 </em> 10^3` com truncamento.</li>
+<li>Represente em APF e submeta aos arredondamento e truncamento `12,76`, considerando `t =3` e `b = 10`. Resposta: `0,128 <em> 10^2` com arredondamento, `0,127 </em> 10^3` com truncamento.</li>
+<li>Considere `x_1 = 0,35; x_2 = -5,172; x_3 = 0,0123`. Represente estes números no sistema `F(10,3,2,2)`. Utilize truncamento se necessário. Respostas: `x_1 = 0,350 <em> 10^0; x_2 = 0,53913 </em> 10^4; x_3 = 0,3 * 10^(-3)`. Note que os dois últimos números não são representáveis no sistema dado.</li>
 <li>Considere o sistema <code>F(2,3,1,2)</code>. Quantos e quais números na base decimal podem ser representados neste sistema?</li>
 </ul>
 

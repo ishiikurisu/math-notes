@@ -31,32 +31,38 @@
 <h2 id="simbologia">Simbologia</h2>
 <p>Uma base numérica representa a quantidade de números possíveis para se representar um número. Na base decimal, usamos 0, 1, 2, 3, 4, 5,6 ,7 ,8, e 9. Na base binária, usamos 0 e 1.</p>
 <h2 id="convers-o-de-bases">Conversão de bases</h2>
-<p>TODO completar!</p>
 <p>A calculadora do Windows e o Excel são capazes de realizar estas conversões automaticamente.</p>
 <ul>
-<li>[ ] Converter alguns números entre bases</li>
+<li>Converta `159` de decimal para hexadecimal</li>
+<li>Converta `C40F` de hexadecimal para decimal</li>
+<li>Converta `127` de decimal para binário</li>
+<li>Converta `11011010100110001` de binário para decimal</li>
+<li>Converta `1100001011000101` de binário para hexadecimal</li>
+<li>Converta `7F2D` de hexadecimal para binário</li>
+<li>Converta `1110010001000` de binário para octal</li>
+<li>Converta `67201` de octal para binário</li>
 </ul>
 <h1 id="erro-e-representa-o">Erro e representação</h1>
 <p>Números irracionais possuem diversas caracteristícas e a mais relevante agora é que eles não podem ser representados por frações de números inteiros. Desta forma, sua representação em uma base numérica é sempre infinita (ou seja, precisaríamos de memória infinita para representá-los). Isto é um problema para o CN, pois operações numéricas com estes números sempre trarão um erro associado.</p>
 <p>Curiosidade: raízes pares de números primos sempre são números irracionais.</p>
 <ul>
-<li>[ ] Encontre os seguintes somatórios em uma calculadora e em um computador: `S = sum_(i=1)^(30000) x_i` onde `x_i = 0,5` e `x_i = 0,11`.</li>
+<li>Encontre os seguintes somatórios em uma calculadora e em um computador: `S = sum_(i=1)^(30000) x_i` onde `x_i = 0,5` e `x_i = 0,11`.</li>
 </ul>
 <p>Provavelmente, os resultados destas somas serão diferentes, já que as calculadoras e os computadores utilizam representações numéricas diferentes.</p>
 <h2 id="representa-o-num-rica">Representação numérica</h2>
 <p>Uma máquina computacional representa um número real no sistema de aritmética de ponto flutuante (APF), no qual um número `x` tem a seguinte estrutura:</p>
 <p>`x = +- (0,d_1 d_2 d_3 d_4 ... d_t) * b ^ e`</p>
-<p>onde `{ d<em>i }</em>(i=1)^(t)` é a chamada mantissa; `b`, a base; e `e`, o expoente. `d_1 != 0 AA x`. `e in (m, M)`, chamados de limitantes inferior `m` e superior `M`. </p>
+<p>onde `\{ d_i \}_(i=1)^(t)` é a chamada mantissa; `b`, a base; e `e`, o expoente. `d_1 != 0 AA x`. `e in (m, M)`, chamados de limitantes inferior `m` e superior `M`. </p>
 <p>Para representar um número em ponto flutuante na base `b` com `t` dígitos (chamados <em>significativos</em>) e com limites dos expoentes `m` e `M`, usa-se a notação `F(b, t,m,M)`. Portanto, um número em APF `F(b, t,m,M)` será representado por </p>
 <p>`+- 0,d_1 d_2 d_3 d_4 ... d_t  * b ^ e`</p>
-<p>onde `d_1 != 0` e `-m &lt;= e &lt;= M`</p>
+<p>onde `d_1 != 0` e `-m <= e <= M`</p>
 <ul>
 <li>Represente em APF `(235,89)_10`. Resposta: `0,23589 * 10^3`</li>
 <li>Represente em APF `(0,000875)_10`. Resposta: `0,875 * 10^(-3)`</li>
 <li>Represente em APF e submeta aos arredondamento e truncamento `235,89`, considerando `t =3` e `b = 10`. Resposta: `0,236 <em> 10^3` com arredondamento, `0,235 </em> 10^3` com truncamento.</li>
 <li>Represente em APF e submeta aos arredondamento e truncamento `12,76`, considerando `t =3` e `b = 10`. Resposta: `0,128 <em> 10^2` com arredondamento, `0,127 </em> 10^3` com truncamento.</li>
 <li>Considere `x_1 = 0,35; x_2 = -5,172; x_3 = 0,0123`. Represente estes números no sistema `F(10,3,2,2)`. Utilize truncamento se necessário. Respostas: `x_1 = 0,350 <em> 10^0; x_2 = 0,53913 </em> 10^4; x_3 = 0,3 * 10^(-3)`. Note que os dois últimos números não são representáveis no sistema dado.</li>
-<li>Considere o sistema <code>F(2,3,1,2)</code>. Quantos e quais números na base decimal podem ser representados neste sistema?</li>
+<li>Considere o sistema `F(2,3,1,2)`. Quantos e quais números na base decimal podem ser representados neste sistema?</li>
 </ul>
 
     </body>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>Cálculo numérico</h1>
+<p><strong>14/03/2019</strong></p>
+<h1 id="introdu-o">Introdução</h1>
+<p> O que é cálculo numérico (CN)? É o conjunto de ferramentas ou métodos para resolver problemas matemáticos de forma aproximada. Geralmente cuida de problemas que não possuem solução exata (analítica). Geralmente usa máquinas para nos auxiliar.</p>
+<p>Duas fases importantes no fluxo do cálculo numérico:</p>
+<ul>
+<li>Modelagem</li>
+<li>Resolução</li>
+</ul>
+<p>A escolha do método mais eficiente precisa levar em conta:</p>
+<ul>
+<li>Precisão desejada</li>
+<li>Velocidade de convergência</li>
+<li>Esforço computacional despendido </li>
+</ul>
+<p>Ideias importantes:</p>
+<ul>
+<li>Iteração: consiste de uma aproximação inicial e da repetição de um procedimento que se repete até concluir um teste de parada.</li>
+<li>Aproximação local</li>
+</ul>
+<p>Problemas numéricos trabalham com medidas, não com números exatos. Uma medida física é um intervalo, não um número. Os métodos aproximados busca uma aproximação do que seria o valor exato.</p>
+<h1 id="convers-o-de-bases-num-ricas">Conversão de bases numéricas</h1>
+<p>Conversões numéricas são bastantes utilizadas pois geralmente utilizamos os números na base decimal, mas outras bases são utilizadas para representar os números em máquinas, em especial a base binária.</p>
+<h2 id="simbologia">Simbologia</h2>
+<p>Uma base numérica representa a quantidade de números possíveis para se representar um número. Na base decimal, usamos 0, 1, 2, 3, 4, 5,6 ,7 ,8, e 9. Na base binária, usamos 0 e 1.</p>
+<h2 id="convers-o-de-bases">Conversão de bases</h2>
+<p>TODO completar!</p>
+<p>A calculadora do Windows e o Excel são capazes de realizar estas conversões automaticamente.</p>
+<ul>
+<li>[ ] Converter alguns números entre bases</li>
+</ul>
+<h1 id="erro-e-representa-o">Erro e representação</h1>
+<p>Números irracionais possuem diversas caracteristícas e a mais relevante agora é que eles não podem ser representados por frações de números inteiros. Desta forma, sua representação em uma base numérica é sempre infinita (ou seja, precisaríamos de memória infinita para representá-los). Isto é um problema para o CN, pois operações numéricas com estes números sempre trarão um erro associado.</p>
+<p>Curiosidade: raízes pares de números primos sempre são números irracionais.</p>
+<ul>
+<li>[ ] Encontre os seguintes somatórios em uma calculadora e em um computador: ˋS = sum_(i=1)ˆ(30000) x_iˋ onde ˋx_i = 0,5ˋ e ˋx_i = 0,11ˋ.</li>
+</ul>
+<p>Provavelmente, os resultados destas somas serão diferentes, já que as calculadoras e os computadores utilizam representações numéricas diferentes.</p>
+<h2 id="representa-o-num-rica">Representação numérica</h2>
+<p>Uma máquina computacional representa um número real no sistema de aritmética de ponto flutuante (APF), no qual um número ˋxˋ tem a seguinte estrutura:</p>
+<p>ˋx = +- (0,d_1 d_2 d_3 d_4 ... d_t) * b ˆ eˋ</p>
+<p>onde ˋ{ d<em>i }</em>(i=1)ˆ(t)ˋ é a chamada mantissa; ˋbˋ, a base; e ˋeˋ, o expoente. ˋd_1 != 0 AA xˋ. ˋe in (m, M)ˋ, chamados de limitantes inferior ˋmˋ e superior ˋMˋ. </p>
+<p>Para representar um número em ponto flutuante na base ˋbˋ com ˋtˋ dígitos (chamados <em>significativos</em>) e com limites dos expoentes ˋmˋ e ˋMˋ, usa-se a notação ˋF(b, t,m,M)ˋ. Portanto, um número em APF ˋF(b, t,m,M)ˋ será representado por </p>
+<p>ˋ+- 0,d_1 d_2 d_3 d_4 ... d_t  * b ˆ eˋ</p>
+<p>onde ˋd_1 != 0ˋ e ˋ-m &lt;= e &lt;= Mˋ</p>
+<ul>
+<li>Represente em APF ˋ(235,89)_10ˋ. Resposta: ˋ0,23589 * 10ˆ3ˋ</li>
+<li>Represente em APF ˋ(0,000875)_10ˋ. Resposta: ˋ0,875 * 10ˆ(-3)ˋ</li>
+<li>Represente em APF e submeta aos arredondamento e truncamento ˋ235,89ˋ, considerando ˋt =3ˋ e ˋb = 10ˋ. Resposta: ˋ0,236 <em> 10ˆ3ˋ com arredondamento, ˋ0,235 </em> 10ˆ3ˋ com truncamento.</li>
+<li>Represente em APF e submeta aos arredondamento e truncamento ˋ12,76ˋ, considerando ˋt =3ˋ e ˋb = 10ˋ. Resposta: ˋ0,128 <em> 10ˆ2ˋ com arredondamento, ˋ0,127 </em> 10ˆ3ˋ com truncamento.</li>
+<li>Considere ˋx_1 = 0,35; x_2 = -5,172; x_3 = 0,0123ˋ. Represente estes números no sistema ˋF(10,3,2,2)ˋ. Utilize truncamento se necessário. Respostas: ˋx_1 = 0,350 <em> 10ˆ0; x_2 = 0,53913 </em> 10^4; x_3 = 0,3 * 10^(-3)`. Note que os dois últimos números não são representáveis no sistema dado.</li>
+<li>Considere o sistema <code>F(2,3,1,2)</code>. Quantos e quais números na base decimal podem ser representados neste sistema?</li>
+</ul>
+
+    </body>
+</html>

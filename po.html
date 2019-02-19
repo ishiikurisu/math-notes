@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pesquisa Operacional</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body>
+    <p><strong>18.2.2019</strong></p>
+    <p>A pesquisa operacional (PO) é uma metodologia para auxiliar no processo decisório. Ela se baseia na criação de um modelo que resolve um problema matemático de alocação de recursos. A solução deste modelo pode ser dada de diversas formas e nos permite tomar decisões otimizadas de acordo com os parâmetros dados.</p>
+    <p>A PO utiliza alguns passos básicos:</p>
+        <ul>
+        <li>Formulação do problema</li>
+        <li>Construção de um modelo que represente o sistema em estudo</li>
+        <li>Obtenção de uma solução a partir do modelo</li>
+        <li>Teste do modelo e da solução dele originada</li>
+        <li>Estabelecimento de controle sobre a solução</li>
+        <li>Colocação da solução em funcionamento (a.k.a. Implantação)</li>
+    </ul>
+    <p>A formulação do problema leva em conta os objetivos; as alternativas de ação; as restrições; e o efeito do sistema.</p>
+    <p>Um modelo matemático se trata de um conjunto de equações ou inequações que descrevem o problema. Deve conter uma função objetivo (ou função eficiência) e as restrições do problema. Estas equações podem conter variáveis controláveis ou incontroláveis.</p>
+    <p>A solução do modelo pode ser obtida a partir de um <em>software</em> especializado, como o <a href="https://opsolve.com/">Solve</a> e o <a href="https://thecriticalpathmethod.weebly.com/lingo.html">LINGO</a>. </p>
+    <h2 id="exemplo-de-modelo">Exemplo de modelo</h2>
+    <p>Certa empresa fabrica dois produtos, `A` e `B`. O lucro unitário do produto `A` é de R$100,00 e o do `B`, R$150,00. Precisamos de 2 horas para fabricar um produto `A` e 3h para um `B`. O tempo mensal máximo de fábrica é 120 horas. Deseja-se maximizar o lucro.</p>
+    <p><strong>Modelo do problema</strong>: `Z = 100 x_A + 150 x_B` é a nossa função objetiva. `2 x_A + 3 x_B <= 120`; `x_A, x_B <= 0` são as nossas restrições. Queremos maximizar `Z` para o descrito sistema.</p>
+    <p><strong>Solução do problema</strong>:  Note que `x_A, x_B` são variáveis controláveis, já que podemos dizer quantos produtos fabricaremos por mês. Utilizando programação linear, somos capazes de descobrir que podemos fabricar 15 unidades do produto `A` e 30 do produto `B` para obter um lucro máximo de R$6000,00 por mês.</p>
+</body>
+</html>

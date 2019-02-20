@@ -11,6 +11,8 @@
     </script>
 </head>
 <body>
+    <h1>Pesquisa Operacional</h1>
+
     <p><strong>18.2.2019</strong></p>
     <p>A pesquisa operacional (PO) é uma metodologia para auxiliar no processo decisório. Ela se baseia na criação de um modelo que resolve um problema matemático de alocação de recursos. A solução deste modelo pode ser dada de diversas formas e nos permite tomar decisões otimizadas de acordo com os parâmetros dados.</p>
     <p>A PO utiliza alguns passos básicos:</p>
@@ -29,5 +31,17 @@
     <p>Certa empresa fabrica dois produtos, `A` e `B`. O lucro unitário do produto `A` é de R$100,00 e o do `B`, R$150,00. Precisamos de 2 horas para fabricar um produto `A` e 3h para um `B`. O tempo mensal máximo de fábrica é 120 horas. Deseja-se maximizar o lucro.</p>
     <p><strong>Modelo do problema</strong>: `Z = 100 x_A + 150 x_B` é a nossa função objetiva. `2 x_A + 3 x_B <= 120`; `x_A, x_B <= 0` são as nossas restrições. Queremos maximizar `Z` para o descrito sistema.</p>
     <p><strong>Solução do problema</strong>:  Note que `x_A, x_B` são variáveis controláveis, já que podemos dizer quantos produtos fabricaremos por mês. Utilizando programação linear, somos capazes de descobrir que podemos fabricar 15 unidades do produto `A` e 30 do produto `B` para obter um lucro máximo de R$6000,00 por mês.</p>
+
+    <p><strong>19/2/2019</strong></p>
+    <h2 id="obtendo-a-solu-o-de-um-problema-com-programa-o-linear">Obtendo a solução de um problema com programação linear</h2>
+    <p>Todo problema de PO possui infinitas soluções viáveis, todas contidas na chamada região de soluções viáveis. Contudo, há somente uma única solução otimizada, que pode ser descoberta por meio do método de Lagrange, baseado no vetor gradiente:</p>
+    <p>`grad f := \{ (del f)/(del x_i) \}_(i=0)^(n)`</p>
+    <p>Em programação linear, o gradiente de uma função é o vetor dos coeficientes da função-objetivo, já que, neste caso, ela é um polinômio. A saber, o vetor gradiente aponta para a direção de maior crescimento de uma função.</p>
+    <p>Cada restrição do modelo constitui uma reta que deverá ser traçada no plano cartesiano. Por exemplo:</p>
+    <p>` 2 x_A + 3 x_B <= 120 => ` reta que passa pelos pontos ` (0, 40) (60, 0) `</p>
+    <p>Note que a primeira equação define uma reta que divide o plano cartesiano em dois semiplanos, sendo que um contém a origem e o outro não. Para prosseguir com o método da programação linear, precisamos descartar um destes planos por meio do chamado <em>teste da origem</em> (TO): devemos manter o semiplano que mantém as equações consistentes. No caso, a origem está de acordo com a inequação, então precisamos mantê-la no modelo. Portanto, descartaremos o semiplano superior. </p>
+    <p>As outras restrições definirão o resto do polígono que será o objeto do procura da solução ótima na direção do vetor gradiente: traçamos a reta com a direção do vetor gradiente. Para maximizar uma problema de programação linear, queremos encontrar o último vértice que pode ser encontrado andando contra a origem com uma reta perpendicular à da direção do vetor gradiente. Este é o chamado <em>método gráfico</em>.</p>
+    <p>A saber, o método da programação linear funciona somente para problemas com restrições não-lineares.</p>
+
 </body>
 </html>

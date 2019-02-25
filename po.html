@@ -43,5 +43,131 @@
     <p>As outras restrições definirão o resto do polígono que será o objeto do procura da solução ótima na direção do vetor gradiente: traçamos a reta com a direção do vetor gradiente. Para maximizar uma problema de programação linear, queremos encontrar o último vértice que pode ser encontrado andando contra a origem com uma reta perpendicular à da direção do vetor gradiente. Este é o chamado <em>método gráfico</em>.</p>
     <p>A saber, o método da programação linear funciona somente para problemas com restrições não-lineares.</p>
 
+    <strong>25/02/2019</strong>
+    <h2>Programação Linear</h2>
+    <p>
+        A programação linear (LP) é um meio matemático de designar um montante fixo de recursos que satisfaça certa demanda de tal modo que alguma função-objetivo seja otimizada e ainda satisfaça a outras condições definidas.
+    </p>
+
+    <p>
+        Problemas não-lineares podem ser linearizados pelo método de Runge-Kutta.
+    </p>
+
+    <h3>Teorema de Motzkin</h3>
+    <p>
+        Seja `f` uma função linear definida em um conjunto poliédrico fechado `S`. Então `f` assume seu máximo ou seu mínimo em um ponto extremo de `S`.
+    </p>
+    <p>
+        Este caso também pode ocorrer em um hiperplano. Portanto, para se resolver um problema de PL, basta encontrar os pontos extremos que maximizam (ou minizam) a função-objetivo
+    </p>
+
+    <h3>Exemplos</h3>
+
+    <h3>Exercício 1</h3>
+    <p>
+        Suponhamos que uma pequena companhia de fabricação faça dois produtos 1 e 2, e que os donos dessa companhia sejam bastante afortunados para vender tudo que podem produzir por enquanto. Cada produto requer certo tempo de produção nos três departamentos de fabricação, como indica o Quadro 1 abaixo. Atualmente, cada departamento tem uma quantidade fixa de homens-hora disponível por semana, como mostra o Quadro 2 abaixo. O problema é decidir quanto fabricar de cada produto para se fazer o melhor uso possível das instalações produtivas que têm seus limites. Suponha que o lucro unitário do produto 1 seja de R$ 1,00 e o do produto 2 seja R$1,50.  A Diretoria desta companhia deve designar os recursos fixos (tempo de fabricação de cada departamento – Quadro 1) de modo a otimizar alguma função-objetivo (maximizar o lucro) e ainda satisfazer algumas outras condições definidas (não exceder a capacidade departamental de trabalho – Quadro 2). Considerando os Quadros 1 e 2 abaixo, e com base nos dados do problema acima, formule um modelo (problema) de programação linear (PPL) que expresse o objetivo (maximizar o lucro) e as restrições dessa companhia de fabricação e encontre a solução ótima pelo método gráfico.
+    </p>
+
+    <p>
+        <strong>Quadro 1:</strong> Exigências de tempo de fabricação para se produzir uma unidade do produto por departamento.
+    </p>
+    <table>
+        <tr>
+            <td rowspan="2">Produto</td>
+            <td colspan="3">Tempo de fabricação (horas)</td>
+        </tr>
+        <tr>
+            <td>Dpto A</td>
+            <td>Dpto B</td>
+            <td>Dpto C</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>1</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+    </table>
+
+    <p>
+        <strong>Quadro 2: </strong>Exigências de tempo de fabricação para se produzir uma unidade do produto por departamento.
+    </p>
+    <table>
+        <tr>
+            <td>Departamento</td>
+            <td>Homens-hora/semana disponível</td>
+        </tr>
+        <tr>
+            <td>Dpto A</td>
+            <td>160</td>
+        </tr>
+        <tr>
+            <td>Dpto B</td>
+            <td>120</td>
+        </tr>
+        <tr>
+            <td>Dpto C</td>
+            <td>280</td>
+        </tr>
+    </table>
+    <p>
+        <strong>Resposta:</strong> `X_1 = 40`, `X_2 = 40`, `Z_(max) = 100`
+    </p>
+
+    <h3>Exemplo 2</h3>
+    <p>
+        Um fabricante deseja maximizar a receita bruta. A tabela a seguir ilustra as composições das ligas, seus preços e as limitações na disponibilidade da matéria prima.
+    </p>
+
+    <table>
+        <tr>
+            <td rowspan="2">Itens</td>
+            <td colspan="2">Atividades</td>
+            <td rowspan="2">Matéria-prima disponível</td>
+        </tr>
+        <tr>
+            <td>Liga tipo A</td>
+            <td>Liga tipo B</td>
+        </tr>
+        <tr>
+            <td>Cobre</td>
+            <td>1</td>
+            <td>2</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>Zinco</td>
+            <td>2</td>
+            <td>1</td>
+            <td>11</td>
+        </tr>
+        <tr>
+            <td>Chumbo</td>
+            <td>3</td>
+            <td>1</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>Preço unitário de venda</td>
+            <td>R$50,00</td>
+            <td>R$30,00</td>
+            <td></td>
+        </tr>
+    </table>
+
+    <p>
+        Sendo `X_A` a quantidade de liga `A` a ser produzida; `X_B`, a de `B`; formule o PPL e encontre a solução ótima pelo método gráfico.
+    </p>
+
+    <p>
+        <strong>Resposta:</strong> `X_1 = 2`, `X_2 = 7`, `Z_(max) = 310`
+    </p>
+
 </body>
 </html>

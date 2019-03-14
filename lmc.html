@@ -474,8 +474,8 @@
     <h1>Semântica da Lógica Proposicional</h1>
     <p>
         A interpretação ou a semântica dis elementos sintáticos da linguagem
-        da lógica proposicional é determinada por uma função 
-        `fr I` denominada "interpretação", que associa a cada fórmula da 
+        da lógica proposicional é determinada por uma função
+        `fr I` denominada "interpretação", que associa a cada fórmula da
         LPum valor verdadeiro (`TT`) ou falso (`_|_`)
     </p>
     <p>
@@ -557,7 +557,7 @@
         </li>
         <li>
             <p>
-                `H` implica semanticamente `G` (ou `G` é consequência lógica de 
+                `H` implica semanticamente `G` (ou `G` é consequência lógica de
                 `H`) see `fr(I)(H) = TT => fr(I)(G) = TT AA fr(I)`.
             </p>
             <p>
@@ -565,7 +565,7 @@
             </p>
         </li>
         <li>
-           `H` equivale semanticamente a `G` see `fr(I)(H) = fr(I)(G) AA fr(I)` 
+           `H` equivale semanticamente a `G` see `fr(I)(H) = fr(I)(G) AA fr(I)`
         </li>
         <li>
             Dada uma interpretação `fr(I)`, se `fr(I)(H) = TT`, então diz-se que
@@ -644,7 +644,7 @@
     </ul>
 
     <p>
-        O conjunto `beta = \{ H_n \}_(n=1)^(oo)` é satisfatível see 
+        O conjunto `beta = \{ H_n \}_(n=1)^(oo)` é satisfatível see
         `EE fr(I) | \{ fr(I)(H_n) \}_(n=1)^(oo) -= TT`. Nesse caso, dizemos que
         `fr(I)` satisfaz `beta`. Denota-se `fr(I)(beta) = TT`.
     </p>
@@ -653,8 +653,8 @@
     </p>
     <p>
         O conjunto `beta = \{ H_n \}_(n=1)^(oo)` implica semanticamente uma
-        fórmula `H` quando existe uma interpretação `fr(I)` tal que, se 
-        `fr(I)(beta) = TT`, então `fr(I)(H) = TT`. Nesse caso, `H` é 
+        fórmula `H` quando existe uma interpretação `fr(I)` tal que, se
+        `fr(I)(beta) = TT`, então `fr(I)(H) = TT`. Nesse caso, `H` é
         consequeência semântica de `beta`. Denota-se `B |== H`. No caso em que
         `beta` não implica semanticamente `H`, temos \( \beta \nvDash H \)
     </p>
@@ -667,16 +667,16 @@
                 Considere as seguintes fórmulas:
             </p>
             <p>
-                `H_1 := (P_1 ^^ P_2 ^^ P_3 ^^ P_4) => Q` 
+                `H_1 := (P_1 ^^ P_2 ^^ P_3 ^^ P_4) => Q`
             </p>
             <p>
-                `H_2 := (P_1 ^^ P_2 ^^ P_3 ^^ Q) => Q` 
+                `H_2 := (P_1 ^^ P_2 ^^ P_3 ^^ Q) => Q`
             </p>
             <p>
-                `H_3 := (P vv not P) => (Q ^^ not Q)` 
+                `H_3 := (P vv not P) => (Q ^^ not Q)`
             </p>
             <p>
-                Qual dessas fórmulas é uma tautologia? Qual é satisfatível? 
+                Qual dessas fórmulas é uma tautologia? Qual é satisfatível?
                 Qual é contraditória?
             </p>
         </li>
@@ -684,7 +684,7 @@
             Mostre que `beta := \{ P, not P, Q \}` é insatisfatível.
         </li>
         <li>
-            Mostre que 
+            Mostre que
             `beta := \{ P => Q, Q => R, R => S, S => P, not (S => Q) \}`
             é satisfatível.
         </li>
@@ -692,7 +692,7 @@
 
     <h2>Contradição</h2>
     <p>
-        A fórmula `P ^^ not P` está relacionada com o princípio da 
+        A fórmula `P ^^ not P` está relacionada com o princípio da
         não-contradição da lógica clássica (LC): dada uma proposição e a sua
         negação, pelo menos uma delas é falsa.
     </p>
@@ -724,7 +724,7 @@
     </p>
     <h3>Equivalência e implicações semânticas</h3>
     <p>
-        Dadas as fórmulas `H` e `G`, \( H = \parallel = G \) 
+        Dadas as fórmulas `H` e `G`, \( H = \parallel = G \)
         `<=> (H |== G ^^ G |== H)`.
     </p>
     <h3>Transitividade de \(= \parallel = \)</h3>
@@ -737,6 +737,80 @@
         Seja `\{ H_i \}_(i=1)^(n)` um conjunto de fórmulas. `\{ H_i \}_(i=1)^(n)`
         é satisfatível see `^^^_(i=1)^(n) H_i` é satisfatível.
     </p>
-    <!-- Continuar da página 7 -->
+
+    <h3>Teorema da dedução, versão semântica</h3>
+    <p>
+        Considere `beta` um conjunto de fórmulas; e `A, B` duas fórmulas da LP.
+    </p>
+    <p>
+        `beta cup \{ A \} |== B  <=> beta |== A -> B`
+    </p>
+    <h4>Corolários</h4>
+    <ul>
+        <li>
+            Sejam `H, G` fórmulas da LP. Se `H |== G` e `H` é tautologia, então
+            `G` é tautologia.
+        </li>
+        <li>
+            Dadas três fórmulas `A,B,C`: `(A ^^ B) -> C |== A -> (B -> C)`
+        </li>
+        <li>
+            Sejam `H, G` fórmulas.
+            Se `\{ H |== G \}`,
+            então `\{ \{ |== H \} => \{ |== G \} \}`.
+        </li>
+        <li>
+            Equivalência e tautologia: se `\{ H |== G \}`, então
+            `\{ \{ |== H \} <=> \{ |== G \} \}`.
+    </ul>
+
+    <h1>Princípio da Indução</h1>
+    <h2>Indução Natural</h2>
+    <p>
+        Permite provar que todo número natural satistaz certa propriedade.
+        Suponha que saibamos os seguintes fatos sobre uma propriedade `P`:
+    </p>
+    <ul>
+        <li>
+            <strong>Caso base:</strong> `P` vale para o número natural `1`.
+            Ou seja, `P(1) = TT`.
+        </li>
+        <li>
+            <strong>Passo indutivo:</strong> Suponha que `P(n)` vale para algum
+            natural `n`, é possível provar que `P(n+1)` vale.
+        </li>
+    </ul>
+
+    <h2>Indução estrutural</h2>
+    <p>
+        Na Matemática e na Computação, é necessário realizar indução sobre
+        estruturas mais elaboradas do que os números naturais. Aqui
+        realizaremos indução nos comprimentos das fórmulas da LP.
+    </p>
+    <p>
+        Seja `B(E)` uma afirmação sobre uma fórmula proposicional `E`. Se a
+        base e o passo de indução indicados a seguir são verdadeiros, então
+        concluímos que `B(E)` é verdadeiro para qualquer fórmula proposicional
+        `E`. Assim, o algoritmo é:
+    </p>
+    <ol>
+        <li>
+            <strong>Base indutiva:</strong> `B(P)` é válido para qualquer
+            fórmula atômica `P`.
+        </li>
+        <li>
+            <strong>Passo indutivo:</strong> Sejam `H, G` duas fórmulas
+            proposicionais. Se `B(G)` e `B(H)` são verdadeiras então
+            `B(not G), B(H ^^ G), B(H vv G), B(H => G), B(H <=> G)`
+            são verdadeiras.
+        </li>
+    </ol>
+    <p>
+        <strong>Exercício:</strong>
+        Seja `E` uma fórmula proposional. Considere `gamma (E)`
+        o número de conectivos lógicos; e `pi (E)`, o número de
+        parênteses. Então `gamma(E) = 1/2 pi(E)`.
+    </p>
+    <!-- Continuar da página 8 -->
 </body>
 </html>

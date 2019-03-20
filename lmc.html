@@ -811,6 +811,77 @@
         o número de conectivos lógicos; e `pi (E)`, o número de
         parênteses. Então `gamma(E) = 1/2 pi(E)`.
     </p>
-    <!-- Continuar da página 8 -->
+    <p>
+        Vamos mostrar utilizando indução estrutural que a estrutura de árvores
+        de derivação corresponde à estrutura de fórmulas bem formadas.
+    </p>
+    <p>
+        Indutivamente, uma fórmula `phi` bem-formada é associada a uma árvore
+        `T_(phi)` da seguinte forma:
+    </p>
+    <ul>
+        <li>
+            No caso em que `phi` é uma fórmula atômica `P` ou uma constante
+            `\{ TT, _|_ \}`, a estrutura de árvore associada consiste de um
+            único nó rotulado da proposição `P`.
+        </li>
+        <li>
+            Caso `phi := not psi`, para uma fórmula `phi`, a estrutura de
+            árvore associada corresponde a um nó rotulado com o conectivo `not`
+            e um único nó descendente, que será a raíz da árvore associada a
+            `psi`.
+        </li>
+        <li>
+            Caso `phi := psi square varphi` onde
+            `square in \{ ^^, vv, =>, <=> \}` para fórmulas bem-formadas `psi`
+            e `varphi`: a estrutura associada consiste de um nó rotulado por
+            `square` e dois nós descentes rotulados pelas raízes das árvores de
+            `psi` e `varphi`.
+        </li>
+    </ul>
+
+    <h2>Correção da Lógica Proposicional</h2>
+    <p>
+        As regras de dedução natural permitem uma argumentação rigorosa, pela
+        qual chegamos a uma conclusão `varphi` assumindo outras proposições
+        `\{ psi_i \}_(i=1)^(n)`. Neste caso, temos que o sequente
+        `psi_1, ..., psi_n |-- varphi` é válido. Vamos mostrar que esssas
+        regras são corretas no sentido que "sequentes válidos" preserva, a
+        verdade calculada pela tabela-verdade semântica.
+    </p>
+    <p><strong>Exercícios:</strong></p>
+    <ul>
+        <li>
+            `p ^^ q |== p?`
+        </li>
+        <li>
+            `p vv q |== p?`
+        </li>
+        <li>
+            `p ^^ q, not q |== p?`
+        </li>
+    </ul>
+
+    <h2>Completude da Lógica Proposicional</h2>
+    <p>
+        Sejam `\{ psi_i \}_(i=1)^(n)` fórmulas proposicionais.
+        `psi_1, ..., psi_n |-- varphi` é válida see
+        `psi_1, ..., psi_n |== varphi` acontece.
+    </p>
+    <p>
+        Se `\{ psi_i \}_(i=1)^(n) |-- varphi` é válida, existe uma prova de
+        `varphi` a partir de `\{ psi_i \}_(i=1)^(n)`. A demonstração deste
+        teorema será por indução no comprimento da prova do sequente
+        `psi_1, ..., psi_n |-- varphi`.
+    </p>
+    <p>
+        A saber, o cumprimento de uma prova é a quantidade de linhas que esta
+        prova possui.
+    </p>
+    <p>
+        Hipótese da indução: suponha qie p resultado seja válido para toda
+        prova de tamanho `k`.
+    </p>
+    <!-- Continuar da página 9 -->
 </body>
 </html>

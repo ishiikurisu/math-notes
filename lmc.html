@@ -81,6 +81,10 @@
                     <li><a href="#s-2-6-1">Correção da lógica proposicional</a></li>
                     <li><a href="#s-2-6-2">Corretude da lógica proposicional</a></li>
                 </ol>
+                <li><a href="#s-2-7">Fórmulas Equivalentes</a></li>
+                <ol>
+                    <li><a href="#s-2-7-1">Equivalências importantes</a></li>
+                </ol>
             </ol>
         </ol>
     </ol>
@@ -993,6 +997,80 @@
         Hipótese da indução: suponha qie p resultado seja válido para toda
         prova de tamanho `k`.
     </p>
-    <!-- Continuar da página 9 -->
+
+    <a id="s-2-7"></a>
+    <h2>Fórmulas equivalentes</h2>
+    <p>
+        Dadas as fórmulas proposicionais `H` e `G`. já sabemos que
+        \(H = \parallel = G\) denota que `H` e `G` são equivalentes,
+        isto é, `fr(I)(H) = fr(I)(G) AA fr I`.
+    </p>
+    <p>
+        Similarmente, \( H \dashv \vdash G \) significa que `H` e `G` são
+        sintaticamente equivalentes, isto é, tanto `H |-- G` como `G |-- H`
+        são válidos.
+    </p>
+    <p>
+        Pelo da teorema da correção e completude, temos que `H |== G` é o mesmo
+        que `H |-- G` para as regras da dedução natural da lógica clássica.
+        Então, a partir de agora dizemos que `H` e `G` são equivalentes e
+        denotaremos por `H -= G` quando \(H = \parallel = G\) e
+        \( H \dashv \vdash G \).
+    </p>
+    <p>
+        A equivalência entre fórmulas pode ser verificada utilizando
+        tabela-verdade ou árvores de prova.
+    </p>
+    <p>
+        `TT -= P => P`
+    </p>
+    <p>
+        `_|_ -= not (P => P)`
+    </p>
+    <p>
+        `P vv Q -= not P => Q`
+    </p>
+    <p>
+        `P ^^ Q -= not (P => not Q)`
+    </p>
+    <p>
+        `P <=> Q -= not ((P ==> Q) ==> (not Q ==> P))`
+    </p>
+
+    <a id="s-7-1"></a>
+    <h3>Equivalências Importantes</h3>
+    <ul>
+        <li>
+            Idempotência 1: `P vv P -= P`
+        </li>
+        <li>
+            Idempotência 2: `P ^^ P -= P`
+        </li>
+        <li>
+            `P vv TT -= TT`
+        </li>
+        <li>
+            `P ^^ _|_ -= _|_`
+        </li>
+        <li>
+            Lei do meio excluído: `P vv not P -= TT`
+        </li>
+        <li>
+            `P ^^ not P -= _|_`
+        </li>
+        <li>
+            `not not P -= P`
+        </li>
+        <li>
+            Lei de De Morgan 1: `P vv Q -= not (not P ^^ not Q)`
+        </li>
+        <li>
+            Lei de De Morgan 2: `P ^^ Q -= not (not P vv not Q)`
+        </li>
+        <li>
+            `P => Q -= not P vv Q`
+        </li>
+        <!-- Continuar da página 10 -->
+    </ul>
 </body>
 </html>

@@ -11,9 +11,85 @@
     </script>
 </head>
 <body>
+    <h1>Lógica Matemática &amp; Computacional</h1>
+    <p>
+        Pela professora Daniele Nantes
+    </p>
+
+    <h2>Índice</h2>
+    <ol>
+        <li><a href="#s-1">Introdução</a></li>
+        <ol>
+            <li><a href="#s-1-1">Paradoxo de Russel</a></li>
+        </ol>
+
+        <li><a href="#s-2">Lógica Proposicional</a></li>
+        <ol>
+            <li><a href="#s-2-1">Alfabeto da Lógica</a></li>
+            <li><a href="#s-2-2">Dedução natural</a></li>
+            <ol>
+                <li><a href="#s-2-2-1">Notação</a></li>
+                <li><a href="#s-2-2-2">Regras</a></li>
+                <ol>
+                    <li><a href="#s-2-2-2-1">Regras para conjunção</a></li>
+                    <li><a href="#s-2-2-2-2">Regras para negação</a></li>
+                    <li><a href="#s-2-2-2-3">Regras para implicação</a></li>
+                    <li><a href="#s-2-2-2-4">Regras para disjunção</a></li>
+                </ol>
+            </ol>
+            <li><a href="#s-2-2-3">Propriedades</a></li>
+            <ol>
+                <li><a href="#s-2-2-3-1">Propriedades da negação</a></li>
+                <li><a href="#s-2-2-3-2">Propriedades da implicação</a></li>
+            </ol>
+            <li><a href="#s-2-3">Lógicas Intuicionista e Clássica</a></li>
+            <ol>
+                <li><a href="#s-2-3-1">Propriedades diversas</a></li>
+                <ol>
+                </ol>
+                <li><a href="#s-2-4">Semântica da Lógica Proposicional</a></li>
+                <ol>
+                    <li><a href="#s-2-4-1">Propriedades semânticas</a></li>
+                    <li><a href="#s-2-4-2">Semântica da implicação</a></li>
+                    <ol>
+                        <li><a href="#s-2-4-1-1">Examplos da Álgebra</a></li>
+                        <li><a href="#s-2-4-1-2">Causalidade</a></li>
+                    </ol>
+                    <li><a href="#s-2-4-3">Contradição</a></li>
+                    <li><a href="#s-2-4-4">Relação entre proposições semânticas</a></li>
+                    <ol>
+                        <li><a href="#s-2-4-4-1">Tautologia e contradição</a></li>
+                        <li><a href="#s-2-4-4-2">Tautologia e satisfatibilidade</a></li>
+                        <li><a href="#s-2-4-4-3">Implicação semântca e implicação sintática</a></li>
+                        <li><a href="#s-2-4-4-4">Equivalência semântica e "se, e somente se"</a></li>
+                        <li><a href="#s-2-4-4-5">Equivalência e implicações semânticas</a></li>
+                        <li><a href="#s-2-4-4-6">Transitividade de \(= \parallel = \)</a></li>
+                        <li><a href="#s-2-4-4-7">Satisfatibilidade</a></li>
+                    </ol>
+                    <li><a href="#s-2-4-5">Teorema da dedução, versão semântica</a></li>
+                    <ol>
+                        <li><a href="#s-2-4-5-1">Corolários</a></li>
+                    </ol>
+                </ol>
+                <li><a href="#s-2-5">Princípio da indução</a></li>
+                <ol>
+                    <li><a href="#s-2-5-1">Indução natural</a></li>
+                    <li><a href="#s-2-5-2">Indução estrutural</a></li>
+                </ol>
+                <li><a href="#s-2-6">Correção e completude</a></li>
+                <ol>
+                    <li><a href="#s-2-6-1">Correção da lógica proposicional</a></li>
+                    <li><a href="#s-2-6-2">Corretude da lógica proposicional</a></li>
+                </ol>
+            </ol>
+        </ol>
+    </ol>
+
     <!-- Página 1 -->
+    <a id="s-1"></a>
     <h1>Introdução</h1>
 
+    <a id="s-1-1"></a>
     <h2>Paradoxo de Russel</h2>
     <p>
         Considere o conjunto de todos os conjuntos que
@@ -24,6 +100,7 @@
         ` :. A in Q => A !in Q `
     </p>
 
+    <a id="s-2"></a>
     <h1>Lógica Proposicional</h1>
 
     <p>
@@ -36,6 +113,7 @@
         da lógica.
     </p>
 
+    <a id="s-2-1"></a>
     <h2>Alfabeto de Lógica</h2>
     <p>O alfabeto da lógica é constituído por:</p>
     <ul>
@@ -89,6 +167,7 @@
         </li>
     </ul>
 
+    <a id="s-2-2"></a>
     <h2>Dedução natural</h2>
 
     <p>Considere o seguinte argumento:</p>
@@ -141,6 +220,7 @@
         ou para um raciocínio.
     </p>
 
+    <a id="s-2-2-1"></a>
     <h3>Notação</h3>
     <p>
         Suponha que tenhamos um conjunto `\{ phi_i \}_(i=1)^(n)` de proposições
@@ -155,7 +235,9 @@
         prova para ele.
     </p>
 
+    <a id="s-2-2-2"></a>
     <h3>Regras</h3>
+    <a id="s-2-2-2-1"></a>
     <h4>Regras para conjunção</h4>
     <ul>
         <li>
@@ -201,6 +283,7 @@
         Exercício: `(P ^^ Q) ^^ R, S ^^ T |-- Q ^^ S`
     </p>
 
+    <a id="s-2-2-2-2"></a>
     <h4>Regras para negação</h4>
     <ul>
         <li>
@@ -224,6 +307,7 @@
 
     <p>Exercício: `P, not not (Q ^^ R) |-- not not P ^^ R`</p>
 
+    <a id="s-2-2-2-3"></a>
     <h4>Regras para implicação</h4>
     <ul>
         <li>
@@ -254,6 +338,7 @@
         </li>
     </ul>
 
+    <a href="s-2-2-2-4"></a>
     <h4>Regras para disjunção</h4>
     <ul>
         <li>
@@ -295,6 +380,7 @@
     </p>
 
 
+    <a id="s-2-2-3"></a>
     <h3>Propriedades</h3>
 
     <p>
@@ -307,6 +393,7 @@
         `P ^^ (Q vv R) |-- (P ^^ Q) vv (P ^^ R)` e vice-versa
     </p>
 
+    <a id="s-2-2-3-1"></a>
     <h4>Propriedades da negação</h4>
     <p>
         Elas involvem a noção de alguma contradição, que são expressões da forma
@@ -352,6 +439,7 @@
         </li>
     </ul>
 
+    <a href="s-2-2-3-2"></a>
     <h4>Propridades da implicação</h4>
     <p>
         A regra "Inclusão da Implicação" pode ser aplicada sem descarregar nenhuma
@@ -382,7 +470,8 @@
         por `not phi := phi => _|_`.
     </p>
 
-    <h4>Lógicas Intuicionista e Clássica</h4>
+    <a id="s-2-3"></a>
+    <h2>Lógicas Intuicionista e Clássica</h2>
     <p>
         A lógica intuicionista (LI) é composta das regras
     </p>
@@ -423,7 +512,8 @@
         </li>
     </ul>
 
-    <h4>Propriedades diversas</h4>
+    <a id="s-2-3-1"></a>
+    <h3>Propriedades diversas</h3>
     <p>
         Podemos transformar uma prova de
     </p>
@@ -471,7 +561,8 @@
         </li>
     </ul>
 
-    <h1>Semântica da Lógica Proposicional</h1>
+    <a id="s-2-4"></a>
+    <h2>Semântica da Lógica Proposicional</h2>
     <p>
         A interpretação ou a semântica dis elementos sintáticos da linguagem
         da lógica proposicional é determinada por uma função
@@ -539,6 +630,7 @@
         </tbody>
     </table>
 
+    <a id="s-2-4-1"></a>
     <h3>Propriedades Semânticas</h3>
     <p>
         Sejam `H,G, \{ H_i \}_(i=1)^(n)` fórmulas da LP. As propriedades
@@ -576,9 +668,8 @@
         </li>
     </ul>
 
-    <h2>
-        Semântica da Implicação
-    </h2>
+    <a id="s-2-4-2"></a>
+    <h3>Semântica da Implicação</h3>
     <p><em>
         NÃO NECESSARIAMENTE UMA IMPLICAÇÃO POSSUI UMA RELAÇÃO DE CAUSA E EFEITO!
     </em></p>
@@ -616,6 +707,7 @@
             então minha namorada e o Papa são o mesmo indivíduo.
         </li>
     </ol>
+    <a id="s-2-4-1-1"></a>
     <h4>
         Exemplo da Álgebra
     </h4>
@@ -632,7 +724,8 @@
         ` x = -20 :. fr(I)(P) = TT ; fr(I)(Q) = _|_ :. fr(I)(P => Q) = _|_ `
     </p>
 
-    <h3>Causalidade</h3>
+    <a id="s-2-4-1-2"></a>
+    <h4>Causalidade</h4>
     <p>
         Conforme a tabela-verdade da implicação `P => Q`, se `fr(I)(Q) = TT`,
         então `fr(I)(P => Q) = TT AA P`. Logo, `P` e `Q` são independentes.
@@ -658,9 +751,9 @@
         consequeência semântica de `beta`. Denota-se `B |== H`. No caso em que
         `beta` não implica semanticamente `H`, temos \( \beta \nvDash H \)
     </p>
-    <h4>
+    <strong>
         Exercícios
-    </h4>
+    </strong>
     <ul>
         <li>
             <p>
@@ -690,7 +783,8 @@
         </li>
     </ul>
 
-    <h2>Contradição</h2>
+    <a id="s-2-4-3"></a>
+    <h3>Contradição</h3>
     <p>
         A fórmula `P ^^ not P` está relacionada com o princípio da
         não-contradição da lógica clássica (LC): dada uma proposição e a sua
@@ -702,42 +796,51 @@
         </li>
     </ul>
 
-    <h2>Relações entre proposições semânticas</h2>
-    <h3>Tautologia e contradição</h3>
+    <a id="s-2-4-4"></a>
+    <h3>Relações entre proposições semânticas</h3>
+    <a id="s-2-4-4-1"></a>
+    <h4>Tautologia e contradição</h4>
     <p>
         `H` é uma tautologia see `not H` é contraditória.
     </p>
     <p>
         `not H` não é satisfatível see `not H` é contraditória.
     </p>
-    <h3>Tautologia e satisfatibilidade</h3>
+    <a id="s-2-4-4-2"></a>
+    <h4>Tautologia e satisfatibilidade</h4>
     <p>
         Dada uma fórmula `H`, se `H` é tautologia, então `H` é satisfatível.
     </p>
-    <h3>Implicação semântica e implicação sintática</h3>
+    <a id="s-2-4-4-3"></a>
+    <h4>Implicação semântica e implicação sintática</h4>
     <p>
         `H |== G <=> fr(I)(H => G) AA fr(I)`.
     </p>
-    <h3>Equivalência semântica e "se, e somente se"</h3>
+    <a id="s-2-4-4-4"></a>
+    <h4>Equivalência semântica e "se, e somente se"</h4>
     <p>
         Dadas as fórmulas `H, G`, `H` equivale semanticamente `G` see `H <=> G` é tautologia.
     </p>
-    <h3>Equivalência e implicações semânticas</h3>
+    <a id="s-2-4-4-5"></a>
+    <h4>Equivalência e implicações semânticas</h4>
     <p>
         Dadas as fórmulas `H` e `G`, \( H = \parallel = G \)
         `<=> (H |== G ^^ G |== H)`.
     </p>
-    <h3>Transitividade de \(= \parallel = \)</h3>
+    <a id="s-2-4-4-6"></a>
+    <h4>Transitividade de \(= \parallel = \)</h4>
     <p>
         Dadas as fórmulas `E`, `G` e `H`, se \(E = \parallel = G\) e \(G = \parallel = H\),
         então \( E = \parallel = H \).
     </p>
-    <h3>Satisfatibilidade</h3>
+    <a id="s-2-4-4-7"></a>
+    <h4>Satisfatibilidade</h4>
     <p>
         Seja `\{ H_i \}_(i=1)^(n)` um conjunto de fórmulas. `\{ H_i \}_(i=1)^(n)`
         é satisfatível see `^^^_(i=1)^(n) H_i` é satisfatível.
     </p>
 
+    <a id="s-2-4-5"></a>
     <h3>Teorema da dedução, versão semântica</h3>
     <p>
         Considere `beta` um conjunto de fórmulas; e `A, B` duas fórmulas da LP.
@@ -745,6 +848,7 @@
     <p>
         `beta cup \{ A \} |== B  <=> beta |== A -> B`
     </p>
+    <a id="s-2-4-5-1"></a>
     <h4>Corolários</h4>
     <ul>
         <li>
@@ -764,8 +868,10 @@
             `\{ \{ |== H \} <=> \{ |== G \} \}`.
     </ul>
 
-    <h1>Princípio da Indução</h1>
-    <h2>Indução Natural</h2>
+    <a id="s-2-5"></a>
+    <h2>Princípio da Indução</h2>
+    <a id="s-2-5-1"></a>
+    <h3>Indução Natural</h3>
     <p>
         Permite provar que todo número natural satistaz certa propriedade.
         Suponha que saibamos os seguintes fatos sobre uma propriedade `P`:
@@ -781,7 +887,8 @@
         </li>
     </ul>
 
-    <h2>Indução estrutural</h2>
+    <a id="s-2-5-2"></a>
+    <h3>Indução estrutural</h3>
     <p>
         Na Matemática e na Computação, é necessário realizar indução sobre
         estruturas mais elaboradas do que os números naturais. Aqui
@@ -840,7 +947,10 @@
         </li>
     </ul>
 
-    <h2>Correção da Lógica Proposicional</h2>
+    <a id="s-2-6"></a>
+    <h2>Correção e Completude</h2>
+    <a id="s-2-6"></a>
+    <h3>Correção da Lógica Proposicional</h3>
     <p>
         As regras de dedução natural permitem uma argumentação rigorosa, pela
         qual chegamos a uma conclusão `varphi` assumindo outras proposições
@@ -862,7 +972,8 @@
         </li>
     </ul>
 
-    <h2>Completude da Lógica Proposicional</h2>
+    <a id="s-2-6-1"></a>
+    <h3>Completude da Lógica Proposicional</h3>
     <p>
         Sejam `\{ psi_i \}_(i=1)^(n)` fórmulas proposicionais.
         `psi_1, ..., psi_n |-- varphi` é válida see

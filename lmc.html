@@ -84,6 +84,11 @@
             <li><a href="#s-2-7">Fórmulas Equivalentes</a></li>
             <ol>
                 <li><a href="#s-2-7-1">Equivalências importantes</a></li>
+                <li><a href="#s-2-7-2">Formas normais conjuntivas e disjuntivas</a></li>
+                <ol>
+                    <li><a href="#s-2-7-2-1">Método da tabela verdade</a></li>
+                </ol>
+                <li><a href="#s-2-7-3">Resolução</a></li>
             </ol>
         </ol>
     </ol>
@@ -1036,7 +1041,7 @@
         `P <=> Q -= not ((P ==> Q) ==> (not Q ==> P))`
     </p>
 
-    <a id="s-7-1"></a>
+    <a id="s-2-7-1"></a>
     <h3>Equivalências Importantes</h3>
     <ul>
         <li>
@@ -1061,15 +1066,149 @@
             `not not P -= P`
         </li>
         <li>
-            Lei de De Morgan 1: `P vv Q -= not (not P ^^ not Q)`
+            `P vv Q -= not (not P ^^ not Q)`
         </li>
         <li>
-            Lei de De Morgan 2: `P ^^ Q -= not (not P vv not Q)`
+            `P ^^ Q -= not (not P vv not Q)`
         </li>
         <li>
             `P => Q -= not P vv Q`
         </li>
-        <!-- Continuar da página 10 -->
+        <li>
+            Distributividade 1: `P ^^ (Q vv R) -= (P ^^ Q) vv (P ^^ R)`
+        </li>
+        <li>
+            Distributividade 2: `P vv (Q ^^ R) -= (P vv Q) ^^ (P vv R)`
+        </li>
+        <li>
+            Absorção 1: `P ^^ (P vv Q) -= P`
+        </li>
+        <li>
+            Absorção 2: `P vv (P ^^ Q) -= P`
+        </li>
+        <li>
+            Lei de DeMorgan 1: `not (P vv Q) -= not P ^^ not Q`
+        </li>
+        <li>
+            Lei de DeMorgan 2: `not (P ^^ Q) -= not P vv not Q`
+        </li>
     </ul>
+
+    <a id="s-2-7-2"></a>
+    <h3>Formas normais conjuntivas e disjuntivas</h3>
+    <p>
+        Já sabemos que `^^` e `vv` são associativos. É comum escrever uma
+        sequência de conjunções ou disjunções sem utilizar parênteses:
+    </p>
+    <p>
+        `(A ^^ (B ^^ (C ^^ D))) -= A ^^ B ^^ C ^^ D`
+    </p>
+    <p>
+        `(A vv (B vv (C vv D))) -= A vv B vv C vv D`
+    </p>
+    <p>
+        Qualquer fórmula proposicional `H` pode ser transformada em uma fórmula
+        normal disjuntiva, isto é, `H` é equivalente a uma disjunção de
+        fórmulas, cada uma sendo uma conjunção.
+    </p>
+    <p>`H -= vvv_(i=1)^(n in NN) H_i`</p>
+    <p>`H_i := ^^^_(j=1)^(m in NN) H_(i_j)`</p>
+
+    <p>
+        Similarmente, temos formas normais conjuntivas: `H` é equivalente a uma
+        conjunção de fórmulas, cada uma endo uma disjunção de fórmulas atômicas
+        ou suas negações.
+    </p>
+    <p>`H -= ^^^_(i=1)^(n in NN) H_i`</p>
+    <p>`H_i := vvv_(j=1)^(m in NN) H_(i_j)`</p>
+
+    <a id="s-2-7-2-1"></a>
+    <h4>Método da tabela-verdade</h4>
+    <p>
+        Observe a seguinte fórmula:
+    </p>
+    <p>
+        `H := (P ^^ Q) vv not P`
+    </p>
+    <p>
+        Façamos a tabela verdade de H:
+    </p>
+    <table>
+        <thead>
+            <th>`P`</th>
+            <th>`Q`</th>
+            <th>`(P ^^ Q) vv not P`</th>
+            <th>FN`vv`</th>
+            <th>FN`^^`</th>
+        </thead>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>`not P ^^ not Q`</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>`not P ^^ Q`</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+            <td>`not P vv Q`</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>`P ^^ Q`</td>
+            <td></td>
+        </tr>
+    </table>
+    <p>
+        `=> FN vv = (not P ^^ not Q) vv (not P ^^ Q) vv (P ^^ Q)`
+    </p>
+    <p>
+        `FN ^^ = not P vv Q`
+    </p>
+
+    <a id="s-2-7-3"></a>
+    <h3>Resolução</h3>
+    <p>
+        Resolução é uma regra de inferência utilizada para mostrar que um
+        conjunto de fórmulas proposicionais da forma
+        `vvv_(i=1)^(n) hat(P_i)`
+        não é satisfatível. Aqui, `hat(P_i) = \{ P_i, not P_i \}`, onde
+        `P_i` é uma fórmula atômica.
+    </p>
+    <p>
+        O sequente `phi_1, ..., phi_n |-- phi` é válido see o conjunto
+        `\{ phi1, ..., phi_n, not phi \}` não é satisfatível.
+    </p>
+    <p>
+        Vimos que `F_1, F_2, ..., F_n |-- phi` é válido see
+        `(^^^_(i=1)^(n) F_i) ^^ not phi` não é satisfatível. Vamos colocar cada
+        `F_i` e `not phi` na forma conjuntiva:
+    </p>
+    <p>
+        `F_i := G_(i_1) ^^ G_(i_2) ^^ ... ^^ G_(i_(k_i))`
+    </p>
+    <p>
+        `not phi := G_1 ^^ G_2 ^^ ... ^^ G_m`
+    </p>
+    <p>
+        Além disso, cada `G_(i_j)` e `G_e` são da forma
+        `hat(P_1) vv hat(P_2) vv ... vv hat(P_r)`. Assim, dizer que um
+        argumento/sequente é válido é o mesmo que dizer um certo conjunto de
+        disjunções de fórmulas atômicas e fórmulas atômicas negadas não é
+        satisfatível.
+    </p>
+
+    <!-- Continuar da página 11 -->
 </body>
 </html>

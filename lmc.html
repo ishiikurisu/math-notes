@@ -89,6 +89,7 @@
                     <li><a href="#s-2-7-2-1">Método da tabela verdade</a></li>
                 </ol>
                 <li><a href="#s-2-7-3">Resolução</a></li>
+                <li><a href="#s-2-7-4">Cláusulas</a></li>
             </ol>
         </ol>
     </ol>
@@ -1209,6 +1210,60 @@
         satisfatível.
     </p>
 
-    <!-- Continuar da página 11 -->
+    <p>
+        <strong>Exercício:</strong> Determine a validade do sequente:
+    </p>
+    <p>
+        `P => Q, not P => R, Q vv R => S |-- S`
+    </p>
+
+    <a id="s-2-7-4"></a>
+    <h3>Cláusulas</h3>
+    <p>
+        Uma fórmula atômica `P`, bem como sua fórmula atômica negada `not P`,
+        é chamada de literal.
+    </p>
+    <p>
+        Conjuntos finitos de literais `\{ L_i \}_(i=1)^(K)` são chamadas de
+        cláusulas.
+    </p>
+    <p>
+        Uma cláusula `\{ L_i \}_(i=1)^(K)` é satisfatível sse a fórmula
+        proposicional `vvv_(i=1)^(K) L_i` é satisfatível.
+    </p>
+    <p>
+        Uma cláusula vazia `\{\}` não é satisfatível.
+    </p>
+    <p>
+        Um conjunto de cláusulas `bb C` é satisfatível se existe uma
+        interpretação `bb I` que satisfaz cada cláusula de `bb C`.
+    </p>
+    <p>
+        Se `L` é um literal, então o complemento `bar(L)` é definido por:
+    </p>
+    <p>
+        `bar(P) := not P`
+    </p>
+    <p>
+        `bar(not P) := P`
+    </p>
+    <p>
+        Um literal é positivo see for uma fórmula atômica e é negativo caso
+        contrário.
+    </p>
+    <p>
+        Resolução é a regra
+    </p>
+    <p>
+        \( \frac{C \cup \{ L \} \ D \cup \{\bar{L}\}}{C \cup D} \)
+    </p>
+    <p>
+        onde `C` e `D` são cláusulas; e `L` é um literal. Dizemos que estamos
+        "resolvendo" as cláusulas sobre `L`, e a cláusula `C uu D` é chamada
+        resolvente. Uma derivação (por resolução) é uma sequência
+        de cláusulas tais que cada uma está em `C` ou vem de cláusulas
+        anteriores.
+    </p>
+    <!-- Continuar da página 12 -->
 </body>
 </html>

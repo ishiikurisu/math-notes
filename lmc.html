@@ -90,8 +90,26 @@
                 </ol>
                 <li><a href="#s-2-7-3">Resolução</a></li>
                 <li><a href="#s-2-7-4">Cláusulas</a></li>
+                <li><a href="#s-2-7-5">Procedimento de Davis-Putnam</a></li>
+                <ol>
+                    <li><a href="#s-2-7-5-1">
+                        Correção e completudo do DPP
+                    </a></li>
+                    <li><a href="#s-2-7-5-2">
+                        Compacidade da lógica proposicional
+                    </a></li>
+                    <li><a href="#s-2-7-5-3">
+                        Caso geral de correção e completude da resolução
+                    </a></li>
+                </ol>
+                <li><a href="#s-2-7-6">Cláusulas de Horn</a></li>
+                <li><a href="#s-2-7-7">Cláusulas de grafos</a></li>
+                <li><a href="#s-2-7-7-1">
+                    Teorema de Tseitin
+                </a></li>
             </ol>
         </ol>
+        <li><a href="#s-3">Lógica de Predicados</a></li>
     </ol>
 
     <!-- Página 1 -->
@@ -107,6 +125,10 @@
     <p class="math">
         ` Q := \{ P | P !in Q \} `
         ` :. A in Q => A !in Q `
+    </p>
+    <p>
+        Este paradoxo levou Russel a desenvolver começar a desenvolver a lógica
+        prosicional a fim de explicar a matemática.
     </p>
 
     <a id="s-2"></a>
@@ -1264,6 +1286,166 @@
         de cláusulas tais que cada uma está em `C` ou vem de cláusulas
         anteriores.
     </p>
-    <!-- Continuar da página 12 -->
+    <p>
+        A resolução preserva a satisfatibilidade. Isto é, se um conjunto de
+        cláusulas `C` é satisfeito or uma interpretação `fr I`, então qualquer
+        resolvente ou um par de cláusulas de `C` também é satisfeito por `fr I`.
+    </p>
+    <p>
+        O algoritmo de resolução é correto e completo.
+    </p>
+    <p>
+        Não é correto aplicar resolução a mais de uma fórmula atômica.
+    </p>
+
+    <a id="s-2-7-5"></a>
+    <h3>Procedimento de Davis-Putnam (DPP)</h3>
+    <p>
+        Dado um conjunto de não-vazio finito de cláusulas `C` nas fórmulas
+        atômicas `\{ P_i \}_(i=1)^(n)`, o procedimento DPP repete os seguintes
+        passos até que não restem mais fórmulas atômicas:
+    </p>
+    <ol>
+        <li>
+            Elimine as fórmulas atômicas que contenham tanto o literal `L`
+            quanto `bar L`;
+        </li>
+        <li>
+            Escolha uma fórmula atômica `P` que aparece em uma das cláusulas;
+        </li>
+        <li>
+            Adicione todos os resolventes possíveis usando resolução sobre `P`
+            no conjunto de cláusulas;
+        </li>
+        <li>
+            Elimine todas as cláusulas que contenham `P` ou `not P`.
+        </li>
+    </ol>
+    <p>
+        <strong>Exemplo:</strong>
+        `C = \{ \{ P, Q \}, \{ not P, R \}, \{ not P \} \}`
+    </p>
+    <p>
+        `( \{ P, Q \}\  \{ not P \} )/(\{ Q \})`
+    </p>
+    <p>
+        `( \{ P, Q \}\  \{ not P, R \} )/(\{ Q, R \})`
+    </p>
+    <p>
+        `C = \{ \{ Q \}, \{ R \} \}`
+    </p>
+    <p>
+        `=> \{ \}` sem cláusulas
+    </p>
+    <p>
+        ` .: C` é satisfatível. `square`
+    </p>
+    <p>
+        Se o algoritmo retornar um conjunto sem cláusulas, então o conjunto `C`
+        é satisfatível. Se, em algum passo, tem-se uma cláusula vazia, então o
+        conjunto `C` não é satisfatível.
+    </p>
+    <p>
+        <strong>Exercício:</strong> Aplique DPP em
+        `C := \{ \{not P, Q\}, \{not Q, R, S\}, \{ P \}, \{R\}, \{not S\} \}`
+    </p>
+
+    <a id="s-2-7-5-1"></a>
+    <h4>Correção e completudo do DPP</h4>
+    <p>
+        Seja `S` um conjunto finito de cláusulas. Então `S` não é satisfatível
+        sse a saída do DPP é "cláusula vazia".
+    </p>
+
+    <a id="s-2-7-5-2"></a>
+    <h4>Compacidade da lógica proposicional</h4>
+    <p>
+        Seja `S` um conjunto de fórmulas prposicionais. Todo conjunto finito
+        `S_0 in S` é satisfatível sse `S` é satisfatível.
+    </p>
+
+    <a id="s-2-7-5-3"></a>
+    <h4>Caso geral de correção e completude da resolução</h4>
+    <p>
+        Um conjunto de não-vazio de cláusulas `S` é não-satisfatível sse existe
+        uma derivação de uma cláusula vazia de `S` utilizando resolução.
+    </p>
+
+    <a id="s-2-7-6"></a>
+    <h3>Cláusulas de Horn</h3>
+    <p>
+        Uma clásula de Horn é uma cláusula com, no máximo, um literal positivo.
+    </p>
+    <p>
+        As clásulas `\{not Q, not R, not S, not T\}` e `\{not P, Q, not R\}` são
+        cláusulas de Horn.
+    </p>
+    <p>
+        Um resolvente de duas cláusulas de Horn é sempre uma cláusula de Horn.
+    </p>
+    <p>
+        Para saber mais, procure saber sobre o trabalho de David McCallister
+        em lógica em sistemas de segurança.
+    </p>
+    <p>
+        Uma cláusula unitária é uma cláusula do tipo `\{L\}` com um único
+        literal.
+    </p>
+    <p>
+        Resolução unitária refere-se a derivações de resolução nas quais
+        pelo menos uma das cláusulas utilizadas em cada passo é uma cláusula
+        unitária.
+    </p>
+    <p>
+        A resolução unitária é correta e completa para cláusulas de Horn.
+    </p>
+
+    <a id="s-2-7-7"></a>
+    <h3>Cláusulas de grafos</h3>
+    <p>
+        Dado um grafo `G` finito, um conjunto de vértices `V` e um conjunto de
+        arestas `E`, vamos rotular cada vértice `cc v` com 0 ou 1. Este número é
+        a chamada "carga" do vértice `cc v`. A carga total é:
+    </p>
+    <p>
+        `(sum_(cc v in V) fr(C)(cc v)) mod 2`
+    </p>
+    <p>
+        Vamos rotular cada aresta com uma fórmula atômica, de forma que arestas
+        diferentes são rotuladas com fórmulas atômicas diferentes. Temos então
+        um grafo rotulado `hat G`
+    </p>
+    <p>
+        Para cada vértice `cc v` de `G`, seja `var(cc v)` o conjunto de
+        variáveis proposicionais nas arestas ligadas a `cc v` Para cada vértice
+        `cc v`, construímos o conjunto de cláusulas `cls(cc v)` da seguinte
+        forma:
+    </p>
+    <p>`c in cls(cc v) <=>`</p>
+    <ul>
+        <li>
+            As variáveis proposicionais ocorrendo em `c` são precisamente
+            aquelas de `var(cc v)`;
+        </li>
+        <li>
+            `\{#` literais negativos de `c\} + fr(c)(cc v) -=  1 mod 2`
+        </li>
+    </ul>
+    <p>
+        O conjunto de cláusulas associadas ao grafo `hat G` é dado por
+    </p>
+    <p>
+        `cls(hat G) := uuu_(cc v in V) cls(cc v)`
+    </p>
+
+    <a id="s-2-7-7-1"></a>
+    <h4>Teorema de Tseitin</h4>
+    <p>
+        `cls(hat G)` é satisfatível sse a carga total é 0.
+    </p>
+
+    <a id="s-3"></a>
+    <h1>Lógica de Predicados</h1>
+    <!-- Continuar da página 13 -->
 </body>
 </html>

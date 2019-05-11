@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cálculo Multivariável</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body>
+    <h1>Cálculo Multivariável</h1>
+    <p>Pelo professor Célius Magalhães</p>
+
+    <h1 id="aula-1">Aula 1</h1>
+    <h2>Conceitos básicos</h2>
+    <h3>Plano cartesiano</h3>
+    <p>
+        Definimos o plano cartesiano `RR^2` como sendo o conjunto `RR^2 := RR ** RR = \{ (x,y) | x, y in RR \}`. Elementos que pertencem ao plano cartesiano são denominados <em>vetores</em>.
+    </p>
+    <p>
+        Para os vetores `P := (a, b)` e `Q := (x, y)` no plano cartesiano, definimos as seguintes operações:
+    </p>
+    <!-- TODO adicionar as imagens que representam o RR^2 e os vetores -->
+    <p>
+        `P + Q := (a+x, b+y)`
+    </p>
+    <p>
+        `r P := (ra, rb) AA r in RR`
+    </p>
+    <!-- TODO adicionar imagens que mostram os efeitos das operações no RR^2 -->
+
+    <h3>Equação paramétrica da reta</h3>
+    <p>
+        Definimos uma reta `L` tal que, se `P in L`, então `EE P_0 in L : P - P_0 = tQ` onde `t in RR, Q` é um vetor que sai da origem. Sendo assim, podemos escrever `P` como sendo `P = (x_0 + t_a, y_0 + t_b)`.
+    </p>
+    <!-- TODO adicionar imagem que representa P e Q -->
+    <p>
+        Se `a,b != 0 => y - y_0 = b/a (x-x_0)`.
+    </p>
+    <p>
+        <strong>Exercicio:</strong> descubra a equação da reta que passa por `P_0 := (x_0, y_0)` e `P_1 := (x_1, y_1)`.
+    </p>
+
+    <h3>Distância entre dois pontos</h3>
+    <p>
+        A distância entre um ponto `P_0` e a origem do plano cartesiano pode ser calculada pelo teorema de Pitágoras. Essa distância é a chamada <em>norma</em> de `P_0`:
+    </p>
+    <p>
+        `||P_0|| := sqrt(x_0^2 + y_0^2)`
+    </p>
+    <p>
+        Essa definição pode ser expandida para calcularmos a distância entre dois pontos: `|| P_1 - P_0 || := sqrt((x_1 - x_0)^2 + (y_1 - y_0)^2)`.
+    </p>
+    <p>
+        Perceba que a norma é uma função homogênea:
+    </p>
+    <p>
+        `||r P|| = sqrt((rx)^2 + (ry)^2) = sqrt(r^2(x^2+y^2)) = |r| sqrt(x^2+y^2) = |r| ||P||`
+    </p>
+    <p>
+        Além disso, a partir da norma, podemos ver que todo vetor pode ser separado em um componente que indica a sua direção e a sua magnitude:
+    </p>
+    <p>
+        `P/(||P||) = ||P/(||P||)|| = (1/(||P||)) ||P|| = 1 AA P != bar(0)`
+    </p>
+    <p>
+        `=> P = 1/(||P||) P/(||P||)`
+    </p>
+
+    <h4>Exemplo: Força de atração entre o sol e a Terra</h4>
+    <!-- TODO desenhar este exemplo -->
+</body>
+</html>

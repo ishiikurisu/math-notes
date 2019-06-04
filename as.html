@@ -25,7 +25,6 @@
         Uma combinação de linear é uma soma de produtos de vetores com
         escalares: `sum_(i=0)^n a_i vec(v_i)`.
     </p>
-    <br/>
     <p>
         Uma base é um conjunto de vetores linearmente independentes capazes
         de descrever um espaço vetorial.
@@ -38,7 +37,6 @@
     <p>
         `B := \{ x^i | i in [0,N] \}`
     </p>
-    <br/>
     <p>
         Uma base é ortogonal quando todos os vetores da base quando todos
         os vetores da base são ortogonais entre si. Dois vetores são
@@ -46,7 +44,6 @@
         é formada por vetores de uma mesma norma e estes vetores são
         ortogonais entre si, dizemos que esta base é ortonormal.
     </p>
-    <br/>
     <p>
         Dados dois vetores `v` e `x` de uma base `B`, a projeção `p`
         ortogonal de `v` em `x` é tal que:
@@ -102,6 +99,80 @@
         `A * A^(-1) = A^(-1) * A = I`.
     </p>
 
-    <!-- TODO Continuar da aula 2 16.8.15 -->
+    <h1>Aula 2</h1>
+    <h2>Séries de Fourier</h2>
+    <p>
+        A norma de uma espaço vetorial é uma operação tal que:
+    </p>
+    <ul>
+        <li>
+            `norm(vec(x)) = 0 <=> vec(x) = vec(0)`
+        </li>
+        <li>
+            `|a| norm(vec(x)) = norm(a vec(x))`
+        </li>
+        <li>
+            Desigualdade de Cauchy-Schwarz:
+            `||vec(x) + vec(y)|| <= ||vec(x)|| + ||vec(y)||`
+        </li>
+    </ul>
+    <p>
+        Definimos as normas `cc(l)_p` como sendo:
+    </p>
+    <p>
+        `||vec(x)||_p := (sum_(i=1)^m x_i^p)^(1/p)`
+    </p>
+    <p>
+        Similarmente, podemos definir as normas `L_p` para funções como sendo:
+    </p>
+    <p>`f:D->CC`</p>
+    <p>`||f||_p := (int_D |f(x)|^p dx)^(1/p)`</p>
+    <p>
+        Uma função `f` é dita quadrada integrável see `norm(f)_2 < +oo`.
+        Neste caso, dizemos que `f in cc(L)_2`.
+    </p>
+    <p>
+        <strong>Exercício:</strong> considere a seguinte base:
+    </p>
+    <p>
+        `B = \{ 1; cos(pi #); sin(pi #); cos(2 pi #); sin(2 pi #); ...; cos(n pi #); sin(n pi #) \}` onde `#` é uma variável qualquer.
+        Mostre que `B` é uma base ortogonal.
+    </p>
+    <br/>
+    <p>
+        Queremos escrever uma função periódica em termos desta base `B`.
+        Dizemos que a representação desta função em série de Fourier é:
+    </p>
+    <p>
+        `f(x) = a_0/2 + sum_(k=1)^n a_k cos(k pi x) + b_k sin(k pi x)`
+    </p>
+    <p>
+        onde
+    </p>
+    <p>
+        `a_k = ((: f, cos(k pi #) :))/((: cos(k pi #), cos(k pi #) :)) = int_D f(x) cos(k pi x) dx`
+    </p>
+    <p>
+        e
+    </p>
+    <p>
+        `b_k = ((: f, sin(k pi #) :))/((: sin(k pi #), sin(k pi #) :)) = int_D f(x) sin(k pi x) dx`
+    </p>
+    <p>
+        <strong>Exercício:</strong> Escreva a expansão em série de Fourier da
+        função `f` a seguir.
+    </p>
+    <p>
+        `f(x) = { (0, x in [-1;0[), (1, x in [0;1]) :}`
+    </p>
+    <p>
+        <strong>Exercício:</strong> Escreva a expansão em série de Fourier da
+        função descrita no gráfico a seguir.
+    </p>
+    <!-- TODO implementar biblioteca para desenhar os gráficos necessários somente com HTML, CSS & JS -->
+    <canvas id="img-1" width="400" height="400"></canvas>
+    <br/>
+    <!-- Continuar da aula 3 2016.8.22 -->
+    </script>
 </body>
 </html>
